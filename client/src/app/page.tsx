@@ -28,6 +28,14 @@ import AllStatBoxes from "@/components/HomePage/StatBox/AllStatBoxes";
 import CareerLink from "@/components/HomePage/CareerLink/CareerLink";
 import { HomepageCareerLinkData } from "@/components/HomePage/CareerLink/helpers";
 import PopularJobs from "@/components/HomePage/PopularJobs/PopularJobs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer",
+  description: `Avrupa genelindeki güncel iş ilanlarını tek bir platformda
+              toplayarak, yurt dışında kariyer fırsatlarını kolayca keşfetmenizi
+              sağlıyoruz.`,
+};
 
 export default function Home() {
   return (

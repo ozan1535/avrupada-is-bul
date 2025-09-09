@@ -2,6 +2,12 @@ import React from "react";
 import { Building2, MapPin } from "lucide-react";
 import { euCountries, euLanguages, workingSchedules } from "@/lib/helpers";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - İş İlanı",
+  description: `Uluslararası Kariyer ile yeni iş fırsatlarını kaçırmayın.`,
+};
 
 async function page({ params }) {
   const { id } = await params;
@@ -10,7 +16,6 @@ async function page({ params }) {
   );
 
   const data = await res.json();
-  console.log(data, "hheheh");
   if (data.errorMessage) {
     return notFound();
   }

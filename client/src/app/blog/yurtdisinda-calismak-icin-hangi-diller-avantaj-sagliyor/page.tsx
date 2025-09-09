@@ -14,6 +14,13 @@ import {
   DollarSign,
   Briefcase,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - Yurt Dışında Çalışmak İçin En Faydalı Diller",
+  description:
+    "Hangi yabancı diller yurt dışında kariyer yapmak için daha avantajlı? 2025 rehberi ile maaş, iş fırsatları ve sektör bazlı dil analizlerini keşfedin.",
+};
 
 const LanguagesBlog = () => {
   const [activeSection, setActiveSection] = useState("overview");

@@ -13,6 +13,13 @@ import {
   Truck,
   Heart,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - Avrupa’da En Çok Talep Gören Meslekler 2025",
+  description:
+    "2025 yılında Avrupa’da öne çıkan meslekleri öğrenin. Mühendislikten sağlığa, teknolojiden eğitime geleceğin mesleklerine hazırlanın.",
+};
 
 export default function page() {
   const jobCategories = [

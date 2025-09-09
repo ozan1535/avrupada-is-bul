@@ -1,5 +1,12 @@
 import React from "react";
 import { Shield, Eye, Database, Users, Mail, Phone } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - Gizlilik Politikası",
+  description:
+    "Kullanıcı bilgilerinizin gizliliği bizim için önemlidir. Uluslararası Kariyer olarak verilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu öğrenin.",
+};
 
 export default function page() {
   return (
@@ -27,12 +34,13 @@ export default function page() {
               <h2 className="text-xl font-semibold text-gray-900">Giriş</h2>
             </div>
             <p className="text-gray-700 leading-relaxed">
-              Bu gizlilik politikası, Uluslararası Kariyer platformunu kullandığınızda
-              kişisel verilerinizin nasıl toplandığı, kullanıldığı, saklandığı
-              ve korunduğu hakkında bilgi vermektedir. Kişisel verilerinizin
-              korunması bizim için son derece önemlidir ve 6698 sayılı Kişisel
-              Verilerin Korunması Kanunu (KVKK) ile Avrupa Birliği Genel Veri
-              Koruma Tüzüğü (GDPR) hükümlerine uygun olarak işlenmektedir.
+              Bu gizlilik politikası, Uluslararası Kariyer platformunu
+              kullandığınızda kişisel verilerinizin nasıl toplandığı,
+              kullanıldığı, saklandığı ve korunduğu hakkında bilgi vermektedir.
+              Kişisel verilerinizin korunması bizim için son derece önemlidir ve
+              6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ile Avrupa
+              Birliği Genel Veri Koruma Tüzüğü (GDPR) hükümlerine uygun olarak
+              işlenmektedir.
             </p>
           </section>
 
@@ -386,7 +394,9 @@ export default function page() {
                   <Mail className="text-[#0a66c2]" size={20} />
                   <div>
                     <p className="font-medium text-white">E-posta</p>
-                    <p className="text-white">destek.uluslararasikariyer@gmail.com</p>
+                    <p className="text-white">
+                      destek.uluslararasikariyer@gmail.com
+                    </p>
                   </div>
                 </div>
                 {/* <div className="flex items-center space-x-3">

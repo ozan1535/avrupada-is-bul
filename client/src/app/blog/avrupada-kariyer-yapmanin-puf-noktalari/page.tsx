@@ -19,6 +19,13 @@ import {
   Heart,
   Shield,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - Avrupa’da Kariyer Yapmanın Püf Noktaları",
+  description:
+    "Avrupa’da güçlü bir kariyer inşa etmek için gereken zihniyet, beceriler ve networking stratejileri. Başarıya giden yolun detaylı rehberi burada.",
+};
 
 export default function page() {
   const [activeTab, setActiveTab] = useState("mindset");
@@ -178,7 +185,7 @@ export default function page() {
             15 yıllık deneyim ve binlerce başarı hikayesinden çıkarılan
             stratejik içgörüler ile kariyerinizi zirveye taşıyın
           </p>
-         {/*  <div className="flex flex-wrap justify-center items-center gap-8 text-sm">
+          {/*  <div className="flex flex-wrap justify-center items-center gap-8 text-sm">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
               <span>25 dk derinlemesine okuma</span>

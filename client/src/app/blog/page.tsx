@@ -1,5 +1,12 @@
 import BlogCard from "@/components/BlogCard/BlogCard";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - Blog",
+  description:
+    "Avrupa Birliği ülkelerinde çalışma, oturma izni ve vize süreçlerine dair güncel blog yazılarını keşfedin. Göçmenlik rehberleri, puanlama sistemleri ve kariyer fırsatları hakkında bilgi edinin.",
+};
 
 function page() {
   return (

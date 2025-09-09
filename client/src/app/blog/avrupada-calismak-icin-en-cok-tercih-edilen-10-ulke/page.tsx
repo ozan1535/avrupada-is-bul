@@ -10,6 +10,7 @@ import {
   Globe,
   Calendar,
 } from "lucide-react";
+import { Metadata } from "next";
 // import { Metadata } from "next";
 
 // export const metadata: Metadata = {
@@ -61,6 +62,12 @@ import {
 //   // },
 //   //metadataBase: new URL("https://seninsiten.com"),
 // };
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - Avrupa'da Çalışmak için En İyi 10 Ülke",
+  description:
+    "Avrupa’da çalışmak isteyenler için en iyi 10 ülkeyi yaşam kalitesi, iş imkanları ve sosyal haklar açısından karşılaştırdık. Hangi ülke sizin için uygun?",
+};
 
 const page = () => {
   const [expandedCountries, setExpandedCountries] = useState({});

@@ -7,6 +7,13 @@ import {
   Shield,
   Gavel,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - Kullanım Şartları",
+  description:
+    "Web sitemizi kullanmadan önce lütfen kullanım şartlarımızı okuyun. Haklarınız, sorumluluklarınız ve hizmet koşulları hakkında detaylı bilgi.",
+};
 
 export default function page() {
   return (

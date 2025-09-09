@@ -2,6 +2,13 @@ import React from "react";
 import InputsSection from "@/components/JobsPageComponents/InputsSection/InputsSection";
 import JobListingWithPagination from "@/components/JobListingWithPagination/JobListingWithPagination";
 import MobileFilterBar from "@/components/MobileFilterBar/MobileFilterBar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - Yurtdışı İş İlanları",
+  description:
+    "Yurtdışında çalışmak isteyenler için güncel iş ilanları burada! Avrupadaki iş fırsatlarını inceleyin, kariyerinize yön verin.",
+};
 
 async function page() {
   return (
