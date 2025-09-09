@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  transpilePackages: ["@workspace/ui"],
 };
 
 export default nextConfig;
