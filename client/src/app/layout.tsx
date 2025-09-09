@@ -38,7 +38,7 @@ export default function RootLayout({
           <JobsDataProvider>
             <ThemeProvider
               attribute="class"
-              defaultTheme="system"
+              defaultTheme="light"
               enableSystem
               disableTransitionOnChange
             >
