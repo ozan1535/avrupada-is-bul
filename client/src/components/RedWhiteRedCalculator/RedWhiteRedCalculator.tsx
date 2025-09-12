@@ -16,7 +16,7 @@ import { Progress } from "@/components/ui/progress";
 import { CircleCheck, CircleX } from "lucide-react";
 
 function RedWhiteRedCalculator() {
-  const [visaType, setVisaType] = useState(null);
+  const [visaType, setVisaType] = useState<number | null>(null);
   const [points, setPoints] = useState({
     nitelikler: 0,
     deneyimGenelPoint: 0,
@@ -29,7 +29,7 @@ function RedWhiteRedCalculator() {
     ispanyolca: 0,
     digerDiller: 0,
     yas: 0,
-    ek: [],
+    ek: [] as Record<string, any>[],
   });
   const [totalPoint, setTotalPoint] = useState(0);
 
@@ -82,7 +82,7 @@ function RedWhiteRedCalculator() {
       }
     }
 
-    points.ek.forEach((item) => {
+    points.ek.forEach((item: Record<string, any>) => {
       point += item.point;
     });
 
@@ -112,7 +112,7 @@ function RedWhiteRedCalculator() {
               <div className="space-y-3 mt-4">
                 <SelectComponent
                   data={rwrCardVisaTypes}
-                  onValueChange={(item) => {
+                  onValueChange={(item: string) => {
                     setVisaType(+item);
                     setPoints({
                       nitelikler: 0,
@@ -154,7 +154,15 @@ function RedWhiteRedCalculator() {
                     <h1 className="font-bold">Nitelikler</h1>
 
                     <RadioGroup className="mt-5">
-                      {rwrCardCalculatorItems[0][visaType]?.map((item) => (
+                      {(
+                        rwrCardCalculatorItems[0] as {
+                          [key: number]: {
+                            id: number;
+                            text: string;
+                            point: number;
+                          }[];
+                        }
+                      )[visaType]?.map((item) => (
                         <div className="flex items-center gap-3" key={item.id}>
                           <RadioGroupItem
                             value={item.text}
@@ -179,7 +187,15 @@ function RedWhiteRedCalculator() {
                   >
                     <h1 className="font-bold">Deneyim</h1>
 
-                    {rwrCardCalculatorItems[1][visaType]?.map((item) => (
+                    {(
+                      rwrCardCalculatorItems[1] as {
+                        [key: number]: {
+                          id: number;
+                          text: string;
+                          point: number;
+                        }[];
+                      }
+                    )[visaType]?.map((item) => (
                       <div
                         className="grid w-full max-w-sm items-center gap-3 mt-5"
                         key={item.id}
@@ -225,59 +241,81 @@ function RedWhiteRedCalculator() {
                       <h1 className="font-bold">Almanca dil seviyesi</h1>
                       <RadioGroup>
                         <div className="grid grid-cols-2 gap-3 mt-5">
-                          {rwrCardCalculatorItems[2][visaType]["german"]?.map(
-                            (item) => (
-                              <div
-                                className="flex items-center gap-3"
-                                key={`${item.id}`}
-                              >
-                                <RadioGroupItem
-                                  value={item.text}
-                                  id={`${item.id}`}
-                                  className="w-5 h-5"
-                                  checked={points.almanca === item.point}
-                                  onClick={() =>
-                                    setPoints((prev) => ({
-                                      ...prev,
-                                      almanca: item.point,
-                                    }))
-                                  }
-                                />
-                                <Label htmlFor={`${item.id}`}>
-                                  {item.text}
-                                </Label>
-                              </div>
-                            )
-                          )}
+                          {(
+                            rwrCardCalculatorItems[2] as {
+                              [key: number]: {
+                                german: {
+                                  id: number;
+                                  text: string;
+                                  point: number;
+                                }[];
+                                english: {
+                                  id: number;
+                                  text: string;
+                                  point: number;
+                                }[];
+                              };
+                            }
+                          )[visaType]?.german?.map((item) => (
+                            <div
+                              className="flex items-center gap-3"
+                              key={`${item.id}`}
+                            >
+                              <RadioGroupItem
+                                value={item.text}
+                                id={`${item.id}`}
+                                className="w-5 h-5"
+                                checked={points.almanca === item.point}
+                                onClick={() =>
+                                  setPoints((prev) => ({
+                                    ...prev,
+                                    almanca: item.point,
+                                  }))
+                                }
+                              />
+                              <Label htmlFor={`${item.id}`}>{item.text}</Label>
+                            </div>
+                          ))}
                         </div>
                       </RadioGroup>
                       <h1 className="font-bold mt-5">İngilizce dil seviyesi</h1>
                       <RadioGroup>
                         <div className="grid grid-cols-2 gap-3 mt-5">
-                          {rwrCardCalculatorItems[2][visaType]["english"]?.map(
-                            (item) => (
-                              <div
-                                className="flex items-center gap-3"
-                                key={`${item.id}`}
-                              >
-                                <RadioGroupItem
-                                  value={item.text}
-                                  id={`${item.id}`}
-                                  className="w-5 h-5"
-                                  checked={points.ingilizce === item.point}
-                                  onClick={() =>
-                                    setPoints((prev) => ({
-                                      ...prev,
-                                      ingilizce: item.point,
-                                    }))
-                                  }
-                                />
-                                <Label htmlFor={`${item.id}`}>
-                                  {item.text}
-                                </Label>
-                              </div>
-                            )
-                          )}
+                          {(
+                            rwrCardCalculatorItems[2] as {
+                              [key: number]: {
+                                german: {
+                                  id: number;
+                                  text: string;
+                                  point: number;
+                                }[];
+                                english: {
+                                  id: number;
+                                  text: string;
+                                  point: number;
+                                }[];
+                              };
+                            }
+                          )[visaType]?.english?.map((item) => (
+                            <div
+                              className="flex items-center gap-3"
+                              key={`${item.id}`}
+                            >
+                              <RadioGroupItem
+                                value={item.text}
+                                id={`${item.id}`}
+                                className="w-5 h-5"
+                                checked={points.ingilizce === item.point}
+                                onClick={() =>
+                                  setPoints((prev) => ({
+                                    ...prev,
+                                    ingilizce: item.point,
+                                  }))
+                                }
+                              />
+                              <Label htmlFor={`${item.id}`}>{item.text}</Label>
+                            </div>
+                          ))}
                         </div>
                       </RadioGroup>
 
@@ -337,7 +375,15 @@ function RedWhiteRedCalculator() {
                     <h1 className="font-bold">Yaş</h1>
 
                     <RadioGroup defaultValue="comfortable" className="mt-5">
-                      {rwrCardCalculatorItems[3][visaType].map((item) => (
+                      {(
+                        rwrCardCalculatorItems[3] as {
+                          [key: number]: {
+                            id: number;
+                            text: string;
+                            point: number;
+                          }[];
+                        }
+                      )[visaType].map((item) => (
                         <div className="flex items-center gap-3" key={item.id}>
                           <RadioGroupItem
                             value={item.text}
@@ -392,7 +438,15 @@ function RedWhiteRedCalculator() {
                       </RadioGroup>
                     )}
                     <div className="flex flex-col gap-6 mt-5">
-                      {rwrCardCalculatorItems[4][visaType].map((item) => (
+                      {(
+                        rwrCardCalculatorItems[4] as {
+                          [key: number]: {
+                            id: number;
+                            text: string;
+                            point: number;
+                          }[];
+                        }
+                      )[visaType].map((item) => (
                         <div className="flex items-center gap-3" key={item.id}>
                           <Checkbox
                             id={`${item.id}`}

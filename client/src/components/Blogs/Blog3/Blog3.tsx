@@ -8,12 +8,8 @@ import {
   Award,
   Target,
   Lightbulb,
-  Clock,
-  User,
   BookOpen,
-  ChevronRight,
   CheckCircle,
-  AlertCircle,
   Zap,
   Brain,
   Heart,
@@ -275,17 +271,17 @@ export default function Blog3() {
           <div className="bg-white rounded-3xl shadow-xl p-10">
             <div className="flex items-center gap-4 mb-8">
               <div
-                className={`p-4 rounded-2xl bg-gradient-to-r ${activeContent.color} text-white`}
+                className={`p-4 rounded-2xl bg-gradient-to-r ${activeContent?.color} text-white`}
               >
-                <activeContent.icon className="w-8 h-8" />
+                {activeContent && <activeContent.icon className="w-8 h-8" />}
               </div>
               <h3 className="text-3xl font-bold text-gray-900">
-                {activeContent.title}
+                {activeContent?.title}
               </h3>
             </div>
 
             <div className="grid gap-8">
-              {activeContent.tips.map((tip, index) => (
+              {activeContent?.tips.map((tip, index) => (
                 <div
                   key={index}
                   className="border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"

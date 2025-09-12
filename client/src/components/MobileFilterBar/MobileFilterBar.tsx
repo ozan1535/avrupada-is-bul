@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
-import { ListFilterPlus } from "lucide-react";
 import { useFilter } from "@/context/FilterContext";
 import { useJobsDataContext } from "@/context/JobsDataContext";
 import { sidebarItems, sortJobItemsBy } from "@/lib/helpers";
@@ -71,7 +70,7 @@ export default function MobileFilterBar({}) {
         <Button
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold flex items-center justify-center gap-2"
           onClick={() => {
-            refetch(1);
+            refetch("1");
             setFilterItems((prev: any) => ({ ...prev, page: 1 }));
           }}
         >

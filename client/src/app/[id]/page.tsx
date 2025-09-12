@@ -3,20 +3,21 @@ import { Building2, MapPin } from "lucide-react";
 import { euCountries, euLanguages, workingSchedules } from "@/lib/helpers";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { IJobDetailResponse } from "./types";
 
 export const metadata: Metadata = {
   title: "Uluslararası Kariyer - İş İlanı",
   description: `Uluslararası Kariyer ile yeni iş fırsatlarını kaçırmayın.`,
 };
 
-async function page({ params }) {
+async function page({ params }: { params: { id: string } }) {
   const { id } = await params;
   const res = await fetch(
     `https://europa.eu/eures/eures-apps/searchengine/page/jv/id/${id}?lang=en`
   );
 
-  const data = await res.json();
-  if (data.errorMessage) {
+  const data: IJobDetailResponse = await res.json();
+  if ("errorMessage" in data) {
     return notFound();
   }
   const jobDetails = Object.values(data.jvProfiles)[0];

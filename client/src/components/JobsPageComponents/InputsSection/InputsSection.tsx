@@ -64,8 +64,8 @@ function InputsSection() {
       <Button
         className="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white font-bold flex items-center justify-center gap-2"
         onClick={() => {
-          refetch(1);
-          setFilterItems((prev) => ({ ...prev, page: 1 }));
+          refetch("1");
+          setFilterItems((prev) => ({ ...prev, page: "1" }));
           sendGAEvent("event", "Arama Yapildi", {
             screen: "yurtdisi-is-ilanlari",
             keywords: filterItems.keywords,

@@ -2,19 +2,14 @@
 import React, { useState } from "react";
 import {
   CheckCircle,
-  AlertTriangle,
   FileText,
   Globe,
   Users,
   Shield,
   TrendingUp,
-  Clock,
-  User,
-  Lightbulb,
   Target,
   MapPin,
   Euro,
-  BookOpen,
   Award,
 } from "lucide-react";
 

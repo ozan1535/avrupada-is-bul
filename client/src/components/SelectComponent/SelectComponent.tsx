@@ -9,7 +9,13 @@ import {
   SelectValue,
 } from "../ui/select";
 
-function SelectComponent({ data, onValueChange }) {
+function SelectComponent({
+  data,
+  onValueChange,
+}: {
+  data: { id: number; text: string }[];
+  onValueChange: (item: string) => void;
+}) {
   return (
     <div>
       <label className="font-medium">Vize Türü Seçin:</label>

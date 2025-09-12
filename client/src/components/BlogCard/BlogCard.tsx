@@ -3,15 +3,15 @@ import {
   Card,
   CardAction,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import { IBlogCard } from "./BlogCard.types";
 
-function BlogCard({ imageSrc, title, description, link }) {
+function BlogCard({ imageSrc, title, description, link }: IBlogCard) {
   return (
     <Card className="max-w-md w-full overflow-hidden rounded-lg shadow-sm border py-0 gap-2">
       <div className="w-full h-48 sm:h-56 md:h-64 relative bg-gray-100">

@@ -1,4 +1,4 @@
-import { text } from "stream/consumers";
+import { IComboboxFilterKey, IGeneralComboboxItems } from "./types";
 
 export const euCountries = [
   { id: 0, name: "Almanya", filterName: "DE" },
@@ -119,38 +119,38 @@ export const sortJobItemsBy = [
 ];
 
 export const sidebarItems = (
-  countries,
-  workSchedules,
-  languages,
-  jobSectors
+  countries: IGeneralComboboxItems[],
+  workSchedules: IGeneralComboboxItems[],
+  languages: IGeneralComboboxItems[],
+  jobSectors: IGeneralComboboxItems[]
 ) => [
   {
     label: "Ülke",
     data: euCountries,
     selectedData: countries,
     title: "Ülke Seç",
-    key: "countries",
+    key: "countries" as IComboboxFilterKey,
   },
   {
     label: "Çalışma Şekli",
     data: workingSchedules,
     selectedData: workSchedules,
     title: "Çalışma Şekli",
-    key: "workSchedules",
+    key: "workSchedules" as IComboboxFilterKey,
   },
   {
     label: "Dil Becerileri",
     data: euLanguages,
     selectedData: languages,
     title: "Dil Seç",
-    key: "languages",
+    key: "languages" as IComboboxFilterKey,
   },
   {
     label: "Sektör",
     data: jobPortalSectors,
     selectedData: jobSectors,
     title: "Sektör Seç",
-    key: "jobSectors",
+    key: "jobSectors" as IComboboxFilterKey,
   },
 ];
 

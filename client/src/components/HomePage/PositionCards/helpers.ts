@@ -1,4 +1,11 @@
-export const positionCards1 = (icon1, icon2, icon3, icon4) => [
+import { ReactNode } from "react";
+
+export const positionCards1 = (
+  icon1: ReactNode,
+  icon2: ReactNode,
+  icon3: ReactNode,
+  icon4: ReactNode
+) => [
   {
     name: "Marketing",
     searchBy: "Marketing",
@@ -24,7 +31,12 @@ export const positionCards1 = (icon1, icon2, icon3, icon4) => [
     link: "#",
   },
 ];
-export const positionCards2 = (icon1, icon2, icon3, icon4) => [
+export const positionCards2 = (
+  icon1: ReactNode,
+  icon2: ReactNode,
+  icon3: ReactNode,
+  icon4: ReactNode
+) => [
   {
     name: "Finans",
     searchBy: "finance",

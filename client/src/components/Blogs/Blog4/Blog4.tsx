@@ -5,10 +5,8 @@ import {
   TrendingUp,
   Users,
   Star,
-  MapPin,
   BarChart3,
   Languages,
-  Award,
   ArrowRight,
   Clock,
   DollarSign,
@@ -18,7 +16,7 @@ import {
 const Blog4 = () => {
   const [activeSection, setActiveSection] = useState("overview");
   const [scrollY, setScrollY] = useState(0);
-  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -291,7 +289,7 @@ const Blog4 = () => {
     { id: "tips", label: "Öneriler", icon: Star },
   ];
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };

@@ -1,27 +1,14 @@
 import {
-  BookA,
-  BrickWall,
   Briefcase,
-  Building2,
-  Code,
-  Component,
   Globe2,
   Languages,
   ListChecks,
-  Megaphone,
-  ReceiptTurkishLira,
   TrendingUp,
-  Users,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import HeroSectionInputs from "@/components/HomePage/HeroSectionInputs/HeroSectionInputs";
-import {
-  positionCards1,
-  positionCards2,
-} from "@/components/HomePage/PositionCards/helpers";
 import PositionCards from "@/components/HomePage/PositionCards/PositionCards";
-import JobCard from "@/components/JobCard/JobCard";
 import { AccordionComponent } from "@/components/AccordionComponent/AccordionComponent";
 import { homepageFaq } from "@/components/AccordionComponent/helpers";
 import AllStatBoxes from "@/components/HomePage/StatBox/AllStatBoxes";

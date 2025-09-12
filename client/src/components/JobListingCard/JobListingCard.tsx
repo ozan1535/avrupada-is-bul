@@ -1,8 +1,9 @@
+import { IJobData } from "@/context/JobsDataContext";
 import { Briefcase, Building2, ChevronRight, MapPin } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-function JobListingCard({ item }) {
+function JobListingCard({ item }: { item: IJobData }) {
   return (
     <div className="min-w-1/3 max-w-3xl mb-3">
       <div className="flex gap-4 border rounded-lg bg-white p-4 shadow-sm hover:shadow-md transition">

@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/sidebar";
 import ComboboxMenu from "../ComboboxMenu/ComboboxMenu";
 import { sidebarItems } from "@/lib/helpers";
+import { IComboboxFilterKey, IGeneralComboboxItems } from "@/lib/types";
 
 export function AppSidebar() {
   const { filterItems, setFilterItems } = useFilter();
@@ -22,7 +23,6 @@ export function AppSidebar() {
 
   const { countries, workSchedules, languages, jobSectors, keywords } =
     filterItems;
-
   return (
     /*  <Sidebar className="top-16"> */
     <Sidebar className="h-full border-r top-16">
@@ -41,9 +41,9 @@ export function AppSidebar() {
                     selectedData={selectedData}
                     title={title}
                     placeholder="Ara..."
-                    onSelect={(item) =>
-                      onSelect(item, selectedData, key, setFilterItems)
-                    }
+                    onSelect={(item: IGeneralComboboxItems) => {
+                      onSelect(item, selectedData, key, setFilterItems);
+                    }}
                     canSelectSingle={false}
                   />
                 </SidebarGroupContent>

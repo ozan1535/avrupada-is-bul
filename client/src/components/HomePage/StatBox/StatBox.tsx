@@ -1,16 +1,17 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
+import { IStatBoxProp } from "./StatBox.types";
 
-function StatBox({ Icon, number, label, duration = 2000 }) {
+function StatBox({ Icon, number, label, duration = 2000 }: IStatBoxProp) {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const num = parseInt(number);
 
   useEffect(() => {
     let start = 0;
     let end = num;
     let increment = end / (duration / 16);
-    let frame;
+    let frame: number;
 
     const animate = () => {
       start += increment;
@@ -32,12 +33,15 @@ function StatBox({ Icon, number, label, duration = 2000 }) {
       },
       { threshold: 0.5 }
     );
-
-    observer.observe(ref.current);
-
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
     return () => cancelAnimationFrame(frame);
   }, [num, duration]);
 
+  if (!ref) {
+    return;
+  }
   return (
     <div
       ref={ref}

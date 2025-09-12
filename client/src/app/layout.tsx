@@ -7,7 +7,7 @@ import Footer from "@/components/Footer/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FilterProvider } from "@/context/FilterContext";
 import { JobsDataProvider } from "@/context/JobsDataContext";
-import GoogleTranslate from "@/components/GoogleTranslate/GoogleTranslate";
+//import GoogleTranslate from "@/components/GoogleTranslate/GoogleTranslate";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

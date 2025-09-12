@@ -1,4 +1,12 @@
-export const HomepageCareerLinkData = (icon1, icon2, icon3, icon4, icon5) => [
+import { ReactNode } from "react";
+
+export const HomepageCareerLinkData = (
+  icon1: ReactNode,
+  icon2: ReactNode,
+  icon3: ReactNode,
+  icon4: ReactNode,
+  icon5: ReactNode
+) => [
   {
     id: 1,
     title: "Avrupa’da Çalışmak İçin En Çok Tercih Edilen 10 Ülke",

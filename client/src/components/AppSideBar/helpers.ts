@@ -1,4 +1,13 @@
-export const onSelect = (item, filterData, filterName, setFilterItems) => {
+import { IFilterType } from "@/context/FilterContext";
+import { IComboboxFilterKey, IGeneralComboboxItems } from "@/lib/types";
+import { Dispatch } from "react";
+
+export const onSelect = (
+  item: IGeneralComboboxItems,
+  filterData: IGeneralComboboxItems[],
+  filterName: IComboboxFilterKey,
+  setFilterItems: Dispatch<React.SetStateAction<IFilterType>>
+) => {
   const isItemIncluded = filterData.some(
     (filterItem) => filterItem.id === item.id
   );

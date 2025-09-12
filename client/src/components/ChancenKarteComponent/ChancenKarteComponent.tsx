@@ -4,7 +4,7 @@ import { AlertCircle, CheckCircle, Calculator } from "lucide-react";
 
 const ChancenKarteComponent = () => {
   const [currentStep, setCurrentStep] = useState(0);
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState<Record<string, string>>({});
   const [points, setPoints] = useState(0);
   const [isEligible, setIsEligible] = useState(false);
   const [autoQualified, setAutoQualified] = useState(false);
@@ -58,7 +58,7 @@ const ChancenKarteComponent = () => {
         },
       ],
       required: true,
-      showIf: (answers) =>
+      showIf: (answers: Record<string, string>) =>
         answers.qualification && answers.qualification !== "none",
     },
     {
@@ -84,7 +84,7 @@ const ChancenKarteComponent = () => {
         },
       ],
       required: true,
-      showIf: (answers) =>
+      showIf: (answers: Record<string, string>) =>
         answers.recognition &&
         (answers.recognition === "partial" || answers.recognition === "not"),
     },
@@ -115,7 +115,7 @@ const ChancenKarteComponent = () => {
         },
       ],
       required: true,
-      showIf: (answers) =>
+      showIf: (answers: Record<string, string>) =>
         answers.basicLanguage && answers.basicLanguage !== "neither",
     },
     {
@@ -142,7 +142,7 @@ const ChancenKarteComponent = () => {
         },
       ],
       required: true,
-      showIf: (answers) => answers.germanLevel,
+      showIf: (answers: Record<string, string>) => answers.germanLevel,
     },
     {
       id: "age",
@@ -157,7 +157,7 @@ const ChancenKarteComponent = () => {
         { value: "40_plus", label: "40 yaş ve üzeri." },
       ],
       required: true,
-      showIf: (answers) => answers.englishLevel,
+      showIf: (answers: Record<string, string>) => answers.englishLevel,
     },
     {
       id: "hasExperience",
@@ -168,7 +168,7 @@ const ChancenKarteComponent = () => {
         { value: "no", label: "Hayır." },
       ],
       required: true,
-      showIf: (answers) => answers.age,
+      showIf: (answers: Record<string, string>) => answers.age,
     },
     {
       id: "experienceYears",
@@ -189,7 +189,8 @@ const ChancenKarteComponent = () => {
         },
       ],
       required: true,
-      showIf: (answers) => answers.hasExperience === "yes",
+      showIf: (answers: Record<string, string>) =>
+        answers.hasExperience === "yes",
     },
     {
       id: "shortageOccupation",
@@ -207,7 +208,7 @@ const ChancenKarteComponent = () => {
         },
       ],
       required: true,
-      showIf: (answers) =>
+      showIf: (answers: Record<string, string>) =>
         answers.hasExperience === "no" || answers.experienceYears,
     },
     {
@@ -227,7 +228,7 @@ const ChancenKarteComponent = () => {
         },
       ],
       required: true,
-      showIf: (answers) => answers.shortageOccupation,
+      showIf: (answers: Record<string, string>) => answers.shortageOccupation,
     },
     {
       id: "hasPartner",
@@ -242,7 +243,7 @@ const ChancenKarteComponent = () => {
         { value: "no", label: "Hayır, tek başıma geleceğim." },
       ],
       required: true,
-      showIf: (answers) => answers.previousStay,
+      showIf: (answers: Record<string, string>) => answers.previousStay,
     },
     {
       id: "partnerQualified",
@@ -261,11 +262,11 @@ const ChancenKarteComponent = () => {
         { value: "no", label: "Hayır, partnerim kriterleri karşılamıyor." },
       ],
       required: true,
-      showIf: (answers) => answers.hasPartner === "yes",
+      showIf: (answers: Record<string, string>) => answers.hasPartner === "yes",
     },
   ];
 
-  const calculatePoints = (currentAnswers) => {
+  const calculatePoints = (currentAnswers: Record<string, string>) => {
     let totalPoints = 0;
     let qualified = false;
 
@@ -344,7 +345,7 @@ const ChancenKarteComponent = () => {
     return { points: totalPoints, eligible: qualified };
   };
 
-  const handleAnswer = (questionId, value) => {
+  const handleAnswer = (questionId: string, value: string) => {
     const newAnswers = { ...answers, [questionId]: value };
     setAnswers(newAnswers);
 

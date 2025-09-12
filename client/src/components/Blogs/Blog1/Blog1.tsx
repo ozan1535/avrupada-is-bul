@@ -12,10 +12,11 @@ import {
 } from "lucide-react";
 
 const Blog1 = () => {
-  const [expandedCountries, setExpandedCountries] = useState({});
+  const [expandedCountries, setExpandedCountries] = useState<
+    Record<string, boolean>
+  >({});
   const [activeTab, setActiveTab] = useState("overview");
-
-  const toggleCountry = (countryId) => {
+  const toggleCountry = (countryId: string) => {
     setExpandedCountries((prev) => ({
       ...prev,
       [countryId]: !prev[countryId],

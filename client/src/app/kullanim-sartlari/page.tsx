@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  FileText,
-  Users,
-  AlertTriangle,
-  Scale,
-  Shield,
-  Gavel,
-} from "lucide-react";
+import { FileText, AlertTriangle, Scale, Shield } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

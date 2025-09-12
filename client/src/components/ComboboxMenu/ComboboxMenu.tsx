@@ -17,6 +17,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Checkbox } from "../ui/checkbox";
+import { IComboboxMenuProps } from "./ComboboxMenu.types";
 
 function ComboboxMenu({
   data,
@@ -25,7 +26,7 @@ function ComboboxMenu({
   placeholder,
   onSelect,
   canSelectSingle = true,
-}) {
+}: IComboboxMenuProps) {
   const [open, setOpen] = useState(false);
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -70,7 +71,7 @@ function ComboboxMenu({
                 >
                   {!canSelectSingle && (
                     <Checkbox
-                      id={item.id}
+                      id={String(item.id)}
                       className="data-[state=checked]:bg-primary-color data-[state=checked]:border data-[state=unchecked]:border"
                       checked={selectedData.some(
                         (selectedItem) => selectedItem.id === item.id

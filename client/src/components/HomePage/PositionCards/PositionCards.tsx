@@ -3,16 +3,11 @@ import { useFilter } from "@/context/FilterContext";
 import {
   BookA,
   BrickWall,
-  Briefcase,
   Building2,
   Code,
   Component,
-  Globe2,
-  Languages,
-  ListChecks,
   Megaphone,
   ReceiptTurkishLira,
-  TrendingUp,
   Users,
   ChevronRight,
 } from "lucide-react";

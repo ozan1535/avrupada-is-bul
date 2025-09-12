@@ -1,8 +1,8 @@
 import { AppSidebar } from "@/components/AppSideBar/AppSideBar";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { JobsDataProvider } from "@/context/JobsDataContext";
+import { IChildrenReactElement } from "@/lib/types";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: IChildrenReactElement) {
   return (
     /*  <SidebarProvider className="min-h-[90vh]">
       <AppSidebar />

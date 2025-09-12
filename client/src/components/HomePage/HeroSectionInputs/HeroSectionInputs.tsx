@@ -13,11 +13,12 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { sendGAEvent } from "@next/third-parties/google";
+import { IGeneralComboboxItems } from "@/lib/types";
 
 function HeroSectionInputs() {
   const { filterItems, setFilterItems } = useFilter();
   const { keywords, countries } = filterItems;
-  const onSelect = (item) => {
+  const onSelect = (item: IGeneralComboboxItems) => {
     setFilterItems((prev) => ({
       ...prev,
       countries: [item],

@@ -10,17 +10,39 @@ import React, {
 } from "react";
 import { useFilter } from "./FilterContext";
 
+export interface IJobData {
+  employerName: string;
+  jobDescription: string;
+  jobId: string;
+  jobTitle: string;
+  locations: {
+    country: string;
+    city: string;
+  }[];
+  positionSchedules: {
+    schedule: string;
+  }[];
+  publicationDate: string;
+}
+
+export interface IJobDataItem {
+  data: IJobData[];
+  maxPage: number;
+  success: boolean;
+  timestamp: number;
+}
+
 type JobsDataContextType = {
-  data: any;
+  data: IJobDataItem | null;
   loading: boolean;
-  refetch: (page: number) => Promise<void>;
+  refetch: (page: string) => Promise<void>;
 };
 
 const JobsDataContext = createContext<JobsDataContextType | null>(null);
 
 export function JobsDataProvider({ children }: { children: React.ReactNode }) {
   const { filterItems } = useFilter();
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<IJobDataItem | null>(null);
   const [loading, setLoading] = useState(false);
 
   const fetchData = useCallback(

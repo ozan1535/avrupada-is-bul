@@ -4,12 +4,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { IAccordionComponent } from "./accordionComponent.types";
 
-export function AccordionComponent({ data }) {
+export function AccordionComponent({ data }: { data: IAccordionComponent[] }) {
   return (
     <Accordion type="single" collapsible className="w-full">
       {data.map((item) => (
-        <AccordionItem value={item.id} key={item.id} className="border-b">
+        <AccordionItem
+          value={String(item.id)}
+          key={item.id}
+          className="border-b"
+        >
           <AccordionTrigger className="font-semibold text-lg cursor-pointer">
             {item.title}
           </AccordionTrigger>

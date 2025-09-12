@@ -1,5 +1,5 @@
 import React from "react";
-import { Shield, Eye, Database, Users, Mail, Phone } from "lucide-react";
+import { Shield, Eye, Database, Users, Mail } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
