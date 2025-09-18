@@ -47,7 +47,9 @@ export default function RootLayout({
                 <div className="flex-1">{children}</div>
                 <Footer />
               </div>
-              <GoogleAnalytics gaId="G-4QYJWXXMRR" />
+              {process.env.NEXT_PUBLIC_IS_PRODUCTION && (
+                <GoogleAnalytics gaId="G-4QYJWXXMRR" />
+              )}
             </ThemeProvider>
           </JobsDataProvider>
         </FilterProvider>

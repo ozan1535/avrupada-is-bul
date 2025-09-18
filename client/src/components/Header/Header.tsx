@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import {
   NavigationMenu,
@@ -10,19 +9,19 @@ import {
 import Link from "next/link";
 import DarkModeComponent from "../DarkModeComponent/DarkModeComponent";
 import MobileFilterBar from "../MobileFilterBar/MobileFilterBar";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+import UserDropdownMenu from "../UserDropdownMenu/UserDropdownMenu";
 /* import GoogleTranslate from "../GoogleTranslate/GoogleTranslate";
  */
 function Header() {
-  const pathname = usePathname();
   return (
     <>
       <div className="block sm:hidden">
-        <div className="w-full text-center p-3 bg-primary-color text-white font-black">
+        <div className="w-full text-center p-3 bg-primary-color text-white font-black flex justify-between items-center">
           <Link href="/">Uluslararası Kariyer</Link>
+          <UserDropdownMenu />
         </div>
-        {pathname.includes("yurtdisi-is-ilanlari") && <MobileFilterBar />}
+        <MobileFilterBar />
       </div>
       <header className="fixed top-0 left-0 right-0 z-[100] bg-white hidden sm:flex h-10 md:h-16 items-center border-b shadow-sm">
         <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
@@ -79,6 +78,8 @@ function Header() {
           <div>
             {/*    <GoogleTranslate /> */}
             {false && <DarkModeComponent />}
+            <UserDropdownMenu />
+            {/*  <AuthButton /> */}
           </div>
         </div>
       </header>
