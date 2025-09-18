@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -19,6 +20,10 @@ import { onSelect } from "../AppSideBar/helpers";
 export default function MobileFilterBar({}) {
   const { filterItems, setFilterItems } = useFilter();
   const { refetch } = useJobsDataContext();
+  const pathname = usePathname();
+  if (!pathname.includes("yurtdisi-is-ilanlari")) {
+    return null;
+  }
 
   const { countries, workSchedules, languages, jobSectors } = filterItems;
 
