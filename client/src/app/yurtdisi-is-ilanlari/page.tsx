@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 async function page() {
   return (
-    <div className="w-full sm:mt-5 px-5">
+    <div className="w-full sm:mt-5">
       <div className="flex justify-between gap-2">
         <div className="w-full">
           <InputsSection />
