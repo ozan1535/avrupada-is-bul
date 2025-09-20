@@ -101,5 +101,6 @@ export function useFavorites() {
     isFavorite,
     toggleFavorite,
     refetch: loadFavorites,
+    user,
   };
 }

@@ -3,9 +3,11 @@ import React from "react";
 import { Button } from "../ui/button";
 import { useFavorites } from "@/hooks/useFavorites";
 import { ICreateFavoriteRequest } from "@/lib/types";
+import { useRouter } from "next/navigation";
 
 function AddFavoriteButton({ job }: { job: ICreateFavoriteRequest }) {
-  const { isFavorite, toggleFavorite } = useFavorites();
+  const router = useRouter();
+  const { isFavorite, toggleFavorite, user } = useFavorites();
   const isJobFavorite = isFavorite(job.job_id);
   return (
     <Button
@@ -14,7 +16,13 @@ function AddFavoriteButton({ job }: { job: ICreateFavoriteRequest }) {
           ? `cursor-pointer bg-primary-color border-2 border-white text-white hover:bg-white hover:border-primary-color hover:text-primary-color`
           : `cursor-pointer bg-white border-2 border-primary-color text-primary-color hover:bg-primary-color hover:text-white`
       }
-      onClick={() => toggleFavorite(job)}
+      onClick={() => {
+        if (!user) {
+          router.push("/api/auth/login");
+          return;
+        }
+        toggleFavorite(job);
+      }}
     >
       {isJobFavorite ? "Kaydedildi" : "Kaydet"}
     </Button>
