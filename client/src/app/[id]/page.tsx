@@ -4,6 +4,7 @@ import { euCountries, euLanguages, workingSchedules } from "@/lib/helpers";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { IJobDetailResponse } from "./types";
+import AddFavoriteButton from "@/components/AddFavoriteButton/AddFavoriteButton";
 
 export const metadata: Metadata = {
   title: "Uluslararası Kariyer - İş İlanı",
@@ -27,10 +28,34 @@ async function page({ params }: { params: { id: string } }) {
       <div className="bg-white space-y-6">
         <div className="space-y-2 shadow-2xl border rounded-md p-4">
           <div>
-            <div className="flex items-center gap-x-1">
+            <div className="flex justify-between items-center gap-x-1">
               <p className="text-2xl font-semibold text-primary-color">
                 {jobDetails.title}
               </p>
+              <AddFavoriteButton
+                job={{
+                  job_id: id,
+                  job_title: jobDetails.title,
+                  job_description: jobDetails.description.slice(0, 150),
+                  company_name: jobDetails.employer.name,
+                  company_country:
+                    euCountries.find(
+                      (item) =>
+                        item.filterName.toLowerCase() ===
+                        jobDetails.locations[0].countryCode.toLowerCase()
+                    )?.name || "",
+                  position_schedule: jobDetails.positionScheduleCodes.length
+                    ? jobDetails.positionScheduleCodes
+                        .map(
+                          (item) =>
+                            workingSchedules.find(
+                              (schedule) => schedule.filterName === item
+                            )?.name
+                        )
+                        .join(", ")
+                    : "Belirtilmemiş",
+                }}
+              />
             </div>
           </div>
           <div className="flex flex-col justify-center gap-2 space-y-1">
