@@ -17,15 +17,23 @@ function Header() {
   return (
     <>
       <div className="block sm:hidden">
-        <div className="w-full text-center p-3 bg-primary-color text-white font-black flex justify-between items-center">
-          <Link href="/">Uluslararası Kariyer</Link>
+        <div className="w-full text-center p-2 text-white font-black flex justify-between items-center">
+          <Link href="/">
+            <Image
+              src="/webapp-logo.png"
+              alt="Logo"
+              width={120}
+              height={75}
+              className="h-10 object-cover"
+              priority
+            />
+          </Link>
           <UserDropdownMenu />
         </div>
         <MobileFilterBar />
       </div>
       <header className="fixed top-0 left-0 right-0 z-[100] bg-white hidden sm:flex h-10 md:h-16 items-center border-b shadow-sm">
         <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo on the left */}
           <div className="text-2xl font-bold text-primary-color">
             <Link href="/">
               <Image
