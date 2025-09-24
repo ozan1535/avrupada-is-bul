@@ -144,10 +144,10 @@ async function page({ params }: { params: { id: string } }) {
             E-posta:{" "}
             {jobDetails.personContacts[0]?.communications ? (
               <a
-                href={`mailto:${jobDetails.personContacts[0].communications.emails[0].uri}`}
+                href={`mailto:${jobDetails.personContacts[0].communications.emails[0]?.uri}`}
                 className="text-primary-color underline"
               >
-                {jobDetails.personContacts[0].communications.emails[0].uri}
+                {jobDetails.personContacts[0].communications.emails[0]?.uri}
               </a>
             ) : (
               "Belirtilmemiş"
