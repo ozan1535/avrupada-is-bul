@@ -4,13 +4,14 @@ import { Button } from "../ui/button";
 import { useFavorites } from "@/hooks/useFavorites";
 import { ICreateFavoriteRequest } from "@/lib/types";
 import { useRouter } from "next/navigation";
+import { Bookmark, BookmarkCheck } from "lucide-react";
 
 function AddFavoriteButton({ job }: { job: ICreateFavoriteRequest }) {
   const router = useRouter();
   const { isFavorite, toggleFavorite, user } = useFavorites();
   const isJobFavorite = isFavorite(job.job_id);
   return (
-    <Button
+    /*  <Button
       className={
         isJobFavorite
           ? `cursor-pointer bg-primary-color border-2 border-white text-white hover:bg-white hover:border-primary-color hover:text-primary-color`
@@ -25,7 +26,31 @@ function AddFavoriteButton({ job }: { job: ICreateFavoriteRequest }) {
       }}
     >
       {isJobFavorite ? "Kaydedildi" : "Kaydet"}
-    </Button>
+    </Button> */
+    <>
+      {isJobFavorite ? (
+        <BookmarkCheck
+          className="text-primary-color"
+          onClick={() => {
+            if (!user) {
+              router.push("/api/auth/login");
+              return;
+            }
+            toggleFavorite(job);
+          }}
+        />
+      ) : (
+        <Bookmark
+          onClick={() => {
+            if (!user) {
+              router.push("/api/auth/login");
+              return;
+            }
+            toggleFavorite(job);
+          }}
+        />
+      )}
+    </>
   );
 }
 
