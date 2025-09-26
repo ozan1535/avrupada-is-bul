@@ -84,14 +84,14 @@ function Header() {
                   <Link href="/araclar">Araçlar</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
                   <Link href="/urunler">Ürünler</Link>
                 </NavigationMenuLink>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
             </NavigationMenuList>
           </NavigationMenu>
           <div className="flex items-center gap-2">
