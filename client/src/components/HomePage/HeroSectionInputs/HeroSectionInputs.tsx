@@ -65,7 +65,7 @@ function HeroSectionInputs() {
             });
           }}
         >
-          <Button className="sm:w-auto w-full bg-blue-500 hover:bg-blue-500 cursor-pointer font-bold flex items-center justify-center gap-2">
+          <Button className="sm:w-auto w-full bg-blue-500 hover:bg-blue-500 cursor-pointer font-bold flex items-center justify-center gap-2 dark:text-gray-300">
             <Search />
             Arama Yap
           </Button>

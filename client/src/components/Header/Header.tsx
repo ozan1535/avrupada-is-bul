@@ -16,7 +16,7 @@ import UserDropdownMenu from "../UserDropdownMenu/UserDropdownMenu";
 function Header() {
   return (
     <>
-      <div className="block sm:hidden">
+      <div className="block md:hidden">
         <div className="w-full text-center p-2 text-white font-black flex justify-between items-center">
           <Link href="/">
             <Image
@@ -28,11 +28,14 @@ function Header() {
               priority
             />
           </Link>
-          <UserDropdownMenu />
+          <div className="flex items-center gap-2">
+            <UserDropdownMenu />
+            <DarkModeComponent />
+          </div>
         </div>
         <MobileFilterBar />
       </div>
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white hidden sm:flex h-10 md:h-16 items-center border-b shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-[100] bg-white hidden md:flex h-10 md:h-16 items-center border-b shadow-sm dark:bg-[#1d293d]">
         <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
           <div className="text-2xl font-bold text-primary-color">
             <Link href="/">
@@ -81,12 +84,20 @@ function Header() {
                   <Link href="/araclar">Araçlar</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  asChild
+                  className={navigationMenuTriggerStyle()}
+                >
+                  <Link href="/urunler">Ürünler</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <div>
+          <div className="flex items-center gap-2">
             {/*    <GoogleTranslate /> */}
-            {false && <DarkModeComponent />}
             <UserDropdownMenu />
+            <DarkModeComponent />
             {/*  <AuthButton /> */}
           </div>
         </div>

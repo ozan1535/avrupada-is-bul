@@ -41,6 +41,7 @@ function AddFavoriteButton({ job }: { job: ICreateFavoriteRequest }) {
         />
       ) : (
         <Bookmark
+          className="dark:text-gray-200"
           onClick={() => {
             if (!user) {
               router.push("/api/auth/login");

@@ -19,6 +19,9 @@ function JobListingWithPagination() {
   const handlePageChange = (page: string) => {
     refetch(page);
     setFilterItems((prev) => ({ ...prev, page }));
+    if (window) {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
   };
   useEffect(() => {
     if (keywords.length || countries.length) {

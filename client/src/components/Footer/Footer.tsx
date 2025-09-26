@@ -1,5 +1,13 @@
 import React from "react";
-import { MapPin, Mail, House, Briefcase, BookA, Wrench } from "lucide-react";
+import {
+  MapPin,
+  Mail,
+  House,
+  Briefcase,
+  BookA,
+  Wrench,
+  ShoppingBasket,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,7 +15,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white z-50">
-      <div className="fixed bottom-0 left-0 w-full bg-primary-color sm:hidden flex justify-between items-center p-2">
+      <div className="fixed bottom-0 left-0 w-full bg-primary-color md:hidden flex justify-between items-center p-2">
         <Link href="/" className="flex flex-col justify-center items-center">
           <div>
             <House />
@@ -40,6 +48,15 @@ export default function Footer() {
             <Wrench />
           </div>
           Araçlar
+        </Link>
+        <Link
+          href="/urunler"
+          className="flex flex-col justify-center items-center"
+        >
+          <div>
+            <ShoppingBasket />
+          </div>
+          Ürünler
         </Link>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -209,7 +226,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-12 pt-8">
+        <div className="border-t border-gray-700 mt-12 pt-8 mb-10 sm:mb-0">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-300">
               © {currentYear} Uluslararası Kariyer. Tüm hakları saklıdır.

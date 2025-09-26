@@ -25,27 +25,27 @@ async function page({ params }: { params: { id: string } }) {
 
   return (
     <div className="max-w-4xl mx-auto my-20 px-4">
-      <div className="bg-white space-y-6">
+      <div className="bg-white space-y-6 dark:bg-[#1d293d]">
         <div className="space-y-2 shadow-2xl border rounded-md p-4">
           <div>
             <div className="flex justify-between items-center gap-x-1">
               <p className="text-2xl font-semibold text-primary-color">
-                {jobDetails.title}
+                {jobDetails?.title}
               </p>
               <AddFavoriteButton
                 job={{
                   job_id: id,
-                  job_title: jobDetails.title,
-                  job_description: jobDetails.description.slice(0, 150),
-                  company_name: jobDetails.employer.name,
+                  job_title: jobDetails?.title,
+                  job_description: jobDetails?.description.slice(0, 150),
+                  company_name: jobDetails?.employer?.name,
                   company_country:
                     euCountries.find(
                       (item) =>
                         item.filterName.toLowerCase() ===
                         jobDetails.locations[0].countryCode.toLowerCase()
                     )?.name || "",
-                  position_schedule: jobDetails.positionScheduleCodes.length
-                    ? jobDetails.positionScheduleCodes
+                  position_schedule: jobDetails?.positionScheduleCodes.length
+                    ? jobDetails?.positionScheduleCodes
                         .map(
                           (item) =>
                             workingSchedules.find(
@@ -62,7 +62,7 @@ async function page({ params }: { params: { id: string } }) {
             <div className="flex items-center gap-2">
               <Building2 size={20} />
               <span className="word-break-break-word line-clamp-2 whitespace-pre-wrap break-all text-sm font-semibold text-primary">
-                {jobDetails.employer.name}
+                {jobDetails?.employer?.name}
               </span>
             </div>
             <div className="flex items-center gap-x-1">
@@ -96,12 +96,12 @@ async function page({ params }: { params: { id: string } }) {
         <div className="space-y-2 shadow-2xl border rounded-md p-4">
           <p>
             <span className="font-semibold">Şirket:</span>{" "}
-            <span>{jobDetails.employer.name}</span>
+            <span>{jobDetails?.employer?.name}</span>
           </p>
           <p>
             <span className="font-semibold">Çalışma Türü:</span>{" "}
-            {jobDetails.positionScheduleCodes.length
-              ? jobDetails.positionScheduleCodes
+            {jobDetails?.positionScheduleCodes.length
+              ? jobDetails?.positionScheduleCodes
                   .map(
                     (item) =>
                       workingSchedules.find(
@@ -114,7 +114,7 @@ async function page({ params }: { params: { id: string } }) {
 
           <p>
             <span className="font-semibold">Gereken Diller:</span>{" "}
-            {jobDetails.positionLanguages.length
+            {jobDetails?.positionLanguages.length
               ? jobDetails.positionLanguages
                   .map(
                     (item) =>
@@ -184,7 +184,7 @@ async function page({ params }: { params: { id: string } }) {
           </div>
         ) : null} */}
 
-        {jobDetails.applicationInstructions.length ? (
+        {jobDetails?.applicationInstructions.length ? (
           <div className="flex flex-col sm:flex-row gap-4 pt-6">
             <a
               href={

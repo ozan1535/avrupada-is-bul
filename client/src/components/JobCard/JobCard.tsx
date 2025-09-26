@@ -6,32 +6,34 @@ import React from "react";
 function JobCard({ item }: { item: IJobData }) {
   return (
     <div className="max-w-[1400px] border-2 border-primary-color rounded-lg mx-auto flex items-center justify-between">
-      <div className="w-full max-w-sm bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+      <div className="w-full max-w-sm bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl dark:bg-[#1d293d]">
         <div className="p-2 sm:p-6 flex flex-col space-y-4">
           <div className="flex justify-between items-center">
             <div>
-              <h3 className="text-xl text-ellipsis line-clamp-2 font-semibold text-gray-800">
+              <h3 className="text-xl text-ellipsis line-clamp-2 font-semibold text-gray-800 dark:text-gray-200">
                 {item.jobTitle}
               </h3>
-              <p className="text-sm text-gray-600 flex gap-2 items-center">
+              <p className="text-sm text-gray-600 flex gap-2 items-cente dark:text-gray-200">
                 <Building2 />
                 {item.employerName}
               </p>
             </div>
           </div>
 
-          <p className="text-gray-700 text-sm">{item.jobDescription}</p>
+          <p className="text-gray-700 text-sm dark:text-gray-400">
+            {item.jobDescription}
+          </p>
 
           <div className="flex justify-between items-center text-sm text-gray-600">
             <div className="flex items-center space-x-2">
-              <MapPin className="text-gray-500" />
-              <span>
+              <MapPin className="text-gray-500 dark:text-gray-300" />
+              <span className="dark:text-gray-300">
                 {item?.locations.length ? item.locations[0].country : ""}
               </span>
             </div>
             <div className="flex items-center space-x-2">
-              <Briefcase className="text-gray-500" />
-              <span className="text-gray-700">
+              <Briefcase className="text-gray-500 dark:text-gray-300" />
+              <span className="text-gray-700 dark:text-gray-300">
                 {item?.positionSchedules.length
                   ? item?.positionSchedules[0].schedule
                   : ""}

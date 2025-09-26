@@ -21,7 +21,7 @@ function InputsSection() {
   const { orderBy } = filterItems;
   const { refetch } = useJobsDataContext();
   return (
-    <div className="hidden sm:flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
+    <div className="hidden md:flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
       <Input
         type="text"
         placeholder="Pozisyon Ara"

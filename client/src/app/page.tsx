@@ -27,7 +27,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="w-full bg-white">
-      <section aria-labelledby="hero-title" className="w-full bg-slate-100">
+      <section
+        aria-labelledby="hero-title"
+        className="w-full bg-slate-100 dark:bg-slate-700"
+      >
         <div className="max-w-[1400px] mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 items-center gap-10 min-h-[40vh] lg:min-h-[100vh]">
           <div className="max-w-xl">
             <h1
@@ -40,7 +43,7 @@ export default function Home() {
               <span className="block">İş İmkanını Keşfedin</span>
             </h1>
 
-            <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
+            <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed dark:text-gray-300">
               Avrupa genelindeki güncel iş ilanlarını tek bir platformda
               toplayarak, yurt dışında kariyer fırsatlarını kolayca keşfetmenizi
               sağlıyoruz.
@@ -67,7 +70,7 @@ export default function Home() {
 
       <section
         aria-labelledby="featured-jobs-title"
-        className="w-full bg-white"
+        className="w-full bg-white dark:bg-slate-800"
       >
         <div className="max-w-[1400px] mx-auto sm:px-6 py-16">
           <h2
@@ -90,15 +93,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-100">
+      <section className="bg-slate-100 dark:bg-slate-700">
         <div className="container mx-auto py-4 md:py-8 px-4">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
             <div className="space-y-6">
               <div className="space-y-4">
-                <h2 className="text-3xl font-semibold text-gray-900">
+                <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-200">
                   Avrupa’da Kariyerini Planla
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   Avrupa’da çalışmaya hazır mısın? Farklı ülkelerdeki iş
                   ilanlarını tek bir platformda toplayarak kariyer yolculuğunun
                   her adımını senin için kolaylaştırıyoruz. Merak ettiğin
@@ -139,7 +142,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-labelledby="features-title" className="w-full bg-white">
+      <section aria-labelledby="features-title" className="w-full bg-white dark:bg-slate-800">
         <div className="max-w-[1400px] mx-auto px-6 py-16">
           <h2
             id="features-title"
@@ -152,11 +155,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full bg-slate-100">
+      <section className="w-full bg-slate-100 dark:bg-slate-700">
         <AllStatBoxes />
       </section>
 
-      <section className="w-full bg-white py-16 px-6">
+      <section className="w-full bg-white py-16 px-6 dark:bg-slate-800">
         <div className="max-w-[900px] mx-auto">
           <h2 className="text-3xl font-bold text-primary-color text-center">
             Sıkça Sorulan Sorular

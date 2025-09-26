@@ -29,14 +29,14 @@ function BlogCard({ imageSrc, title, description, link }: IBlogCard) {
 
       <CardHeader className="py-0 px-2">
         <Link href={link}>
-          <CardTitle className="text-base sm:text-lg text-primary-color hover:underline transition-colors line-clamp-2">
+          <CardTitle className="text-base sm:text-lg text-primary-color hover:underline transition-colors line-clamp-2 dark:text-gray-200">
             {title}
           </CardTitle>
         </Link>
       </CardHeader>
 
       <CardContent className="px-2 py-0">
-        <p className="text-sm sm:text-base text-gray-700 line-clamp-3">
+        <p className="text-sm sm:text-base text-gray-700 line-clamp-3 dark:text-gray-300">
           {description}
         </p>
       </CardContent>

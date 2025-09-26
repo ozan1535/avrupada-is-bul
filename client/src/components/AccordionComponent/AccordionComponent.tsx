@@ -18,7 +18,7 @@ export function AccordionComponent({ data }: { data: IAccordionComponent[] }) {
           <AccordionTrigger className="font-semibold text-lg cursor-pointer">
             {item.title}
           </AccordionTrigger>
-          <AccordionContent className="text-gray-600 leading-relaxed">
+          <AccordionContent className="text-gray-600 leading-relaxed dark:text-gray-300">
             {item.text}
           </AccordionContent>
         </AccordionItem>

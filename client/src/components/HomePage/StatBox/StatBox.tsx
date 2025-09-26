@@ -47,12 +47,12 @@ function StatBox({ Icon, number, label, duration = 2000 }: IStatBoxProp) {
       ref={ref}
       className="flex flex-col items-center justify-center animate-fadeUp"
     >
-      <Icon size={56} className="text-primary-color mb-4" />
-      <h3 className="text-3xl font-bold text-gray-900">
+      <Icon size={56} className="text-primary-color mb-4 dark:text-white" />
+      <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-200">
         {count}
         {number.replace(/\d/g, "")}
       </h3>
-      <p className="text-lg text-gray-600">{label}</p>
+      <p className="text-lg text-gray-600 dark:text-gray-200">{label}</p>
     </div>
   );
 }

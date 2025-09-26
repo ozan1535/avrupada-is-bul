@@ -3,7 +3,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white dark:bg-slate-800">
       <section aria-labelledby="hero-title" className="w-full">
         <div className="max-w-[1400px] flex justify-center mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24">
           <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">

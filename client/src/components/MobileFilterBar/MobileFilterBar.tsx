@@ -28,7 +28,7 @@ export default function MobileFilterBar({}) {
   const { countries, workSchedules, languages, jobSectors } = filterItems;
 
   return (
-    <div className="block sm:hidden w-full p-4 bg-gray-50 space-y-4">
+    <div className="block md:hidden w-full p-4 bg-gray-50 space-y-4 dark:bg-[#1d293d]">
       <Input
         type="text"
         placeholder="Pozisyon Ara"

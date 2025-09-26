@@ -30,8 +30,8 @@ async function UserDropdownMenu() {
       <DropdownMenuTrigger asChild>
         <Image
           src={user?.picture || "/user-image.jpg"}
-          width={50}
-          height={50}
+          width={35}
+          height={35}
           alt="picture"
           className="cursor-pointer rounded-full"
         />
