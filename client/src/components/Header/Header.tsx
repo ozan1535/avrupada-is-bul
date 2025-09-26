@@ -65,7 +65,7 @@ function Header() {
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
-                  <Link href="/yurtdisi-is-ilanlari">İş Ara</Link>
+                  <Link href="/yurtdisi-is-ilanlari">İs Ara</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
