@@ -13,6 +13,29 @@ import Image from "next/image";
 import UserDropdownMenu from "../UserDropdownMenu/UserDropdownMenu";
 /* import GoogleTranslate from "../GoogleTranslate/GoogleTranslate";
  */
+
+const navItems = [
+  {
+    name: "Ana Sayfa",
+    link: "/",
+  },
+  {
+    name: "İş Ara",
+    link: "/yurtdisi-is-ilanlari",
+  },
+  {
+    name: "Blog",
+    link: "/blog",
+  },
+  {
+    name: "Araçlar",
+    link: "/araclar",
+  },
+  {
+    name: "Ürünler",
+    link: "/urunler",
+  },
+];
 function Header() {
   return (
     <>
@@ -52,46 +75,16 @@ function Header() {
 
           <NavigationMenu viewport={true}>
             <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/">Ana Sayfa</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/yurtdisi-is-ilanlari">İş Ara</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/blog">Blog</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/araclar">Araçlar</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/urunler">Ürünler</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+              {navItems.map((item) => (
+                <NavigationMenuItem key={item.link}>
+                  <NavigationMenuLink
+                    asChild
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    <Link href={item.link}>{item.name}</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
             </NavigationMenuList>
           </NavigationMenu>
           <div className="flex items-center gap-2">
