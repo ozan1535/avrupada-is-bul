@@ -24,13 +24,13 @@ function DarkModeComponent() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="z-[1000]">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+          Gündüz
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+          Gece
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+          Sistem
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
