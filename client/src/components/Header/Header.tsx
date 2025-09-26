@@ -50,7 +50,7 @@ function Header() {
             </Link>
           </div>
 
-          <NavigationMenu viewport={false}>
+          <NavigationMenu viewport={true}>
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink
@@ -65,7 +65,7 @@ function Header() {
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
-                  <Link href="/yurtdisi-is-ilanlari">İs Ara</Link>
+                  <Link href="/yurtdisi-is-ilanlari">İş Ara</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
