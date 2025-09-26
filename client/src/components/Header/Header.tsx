@@ -1,6 +1,7 @@
 import React from "react";
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
@@ -20,7 +21,7 @@ const navItems = [
     link: "/",
   },
   {
-    name: "İş Ara",
+    name: "İş	İlanları",
     link: "/yurtdisi-is-ilanlari",
   },
   {
@@ -73,12 +74,12 @@ function Header() {
             </Link>
           </div>
 
-          <NavigationMenu viewport={true}>
+          <NavigationMenu viewport={false}>
             <NavigationMenuList>
               {navItems.map((item) => (
                 <NavigationMenuItem key={item.link}>
                   <NavigationMenuLink
-                    asChild
+                    //   asChild
                     className={navigationMenuTriggerStyle()}
                   >
                     <Link href={item.link}>{item.name}</Link>
