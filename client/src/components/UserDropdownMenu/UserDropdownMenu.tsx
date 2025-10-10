@@ -1,4 +1,7 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,15 +11,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import {
-  LoginLink,
-  LogoutLink,
-  RegisterLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { syncUserProfile } from "@/lib/supabase/sync-user";
-import Image from "next/image";
-import Link from "next/link";
 
 async function UserDropdownMenu() {
   const { getUser } = getKindeServerSession();
@@ -52,12 +48,14 @@ async function UserDropdownMenu() {
           ) : (
             <>
               <DropdownMenuItem>
-                <LoginLink className="btn btn-ghost sign-in-btn">
+                <Link href="/giris-yap" className="btn btn-ghost sign-in-btn">
                   Giriş Yap
-                </LoginLink>
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <RegisterLink className="btn btn-dark">Kayıt Ol</RegisterLink>
+                <Link href="/kayit-ol" className="btn btn-dark">
+                  Kayıt Ol
+                </Link>
               </DropdownMenuItem>
             </>
           )}
