@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Download,
   FileText,
@@ -8,9 +8,22 @@ import {
   Heart,
 } from "lucide-react";
 import { sendGAEvent } from "@next/third-parties/google";
+import { KindeUser } from "@kinde-oss/kinde-auth-nextjs";
+import { useRouter } from "next/navigation";
+import LoginDialog from "../Dialog/LoginDialog/LoginDialog";
 
-function GermanVisaGuide() {
+function GermanVisaGuide({
+  user,
+}: {
+  user: KindeUser<Record<string, any>> | null;
+}) {
+  const router = useRouter();
+  const [canShowDialog, setCanShowDialog] = useState(false);
   const handleDownload = () => {
+    if (!user) {
+      setCanShowDialog(true);
+      return;
+    }
     // Create a link element and trigger download
     const link = document.createElement("a");
     link.href = "/almanya-vize-rehberi.pdf";
@@ -25,6 +38,19 @@ function GermanVisaGuide() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 sm:mt-20 via-white to-yellow-50">
+      {canShowDialog && (
+        <LoginDialog
+          open={canShowDialog}
+          setOpen={setCanShowDialog}
+          title="Giriş Yapınız"
+          description="Dosyayı indirmek için lütfen giriş yapınız."
+          cancelText="Kapat"
+          continueText="Giriş Yap"
+          handleContinue={() => {
+            router.push("/giris-yap");
+          }}
+        />
+      )}
       {/* Header */}
       {/*  <header className="bg-white shadow-sm border-b-2 border-red-600">
     <div className="max-w-4xl mx-auto px-6 py-4">
