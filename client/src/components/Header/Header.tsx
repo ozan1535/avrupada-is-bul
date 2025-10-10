@@ -81,8 +81,9 @@ function Header() {
                   <NavigationMenuLink
                     //   asChild
                     className={navigationMenuTriggerStyle()}
+                    href={item.link}
                   >
-                    <Link href={item.link}>{item.name}</Link>
+                    {item.name}
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
