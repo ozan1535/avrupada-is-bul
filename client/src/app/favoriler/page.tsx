@@ -14,7 +14,7 @@ async function page() {
   const user = await getUser();
 
   if (!user) {
-    redirect("/api/auth/login", RedirectType.replace);
+    redirect("/giris-yap", RedirectType.replace);
   }
   return (
     <div className="w-full bg-white">
