@@ -11,6 +11,7 @@ import { sendGAEvent } from "@next/third-parties/google";
 import { KindeUser } from "@kinde-oss/kinde-auth-nextjs";
 import { useRouter } from "next/navigation";
 import LoginDialog from "../Dialog/LoginDialog/LoginDialog";
+import Image from "next/image";
 
 function GermanVisaGuide({
   user,
@@ -90,7 +91,13 @@ function GermanVisaGuide({
             </div>
             <div className="flex-shrink-0">
               <div className="w-64 h-80 bg-white/20 rounded-lg border-2 border-white/30 flex items-center justify-center backdrop-blur-sm">
-                <FileText className="w-20 h-20 text-white/80" />
+                <Image
+                  src="/german-visa-type-ebook.png"
+                  alt="Almanya Vize Rehberi"
+                  width={256}
+                  height={320}
+                  className="object-contain w-full h-full transition-transform duration-300 hover:scale-105"
+                />
               </div>
             </div>
           </div>
