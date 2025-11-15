@@ -1,5 +1,12 @@
 import BlogCard from "@/components/BlogCard/BlogCard";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Uluslararası Kariyer - Ürünler",
+  description:
+    "Yurtdışına çıkmak için e-booklarımızdan faydalanın",
+};
 
 function page() {
   return (
