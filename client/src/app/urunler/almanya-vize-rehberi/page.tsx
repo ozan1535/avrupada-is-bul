@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 };
 
 const page = async () => {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
-  return <GermanVisaGuide user={user} />;
+  // const { getUser } = getKindeServerSession();
+  // const user = await getUser();
+  return <GermanVisaGuide /* user={user} */ />;
 };
 
 export default page;

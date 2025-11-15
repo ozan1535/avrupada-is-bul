@@ -88,7 +88,7 @@ function Login({
             </button>
           </LinkComponent>
 
-          {/* <div className="relative mb-6">
+          <div className="relative mb-6">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
             </div>
@@ -97,9 +97,9 @@ function Login({
                 Ya da e-mail adresinizi girin
               </span>
             </div>
-          </div> */}
+          </div>
 
-          {/* <div className="mb-6">
+          <div className="mb-6">
             <label
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
@@ -115,8 +115,8 @@ function Login({
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
               placeholder="you@example.com"
             />
-          </div> */}
-          {/* <LinkComponent
+          </div>
+          <LinkComponent
             authUrlParams={{
               connection_id: process.env.NEXT_PUBLIC_EMAIL_CONNECTION_ID!,
               login_hint: email,
@@ -128,7 +128,7 @@ function Login({
             >
               Devam
             </button>
-          </LinkComponent> */}
+          </LinkComponent>
 
           <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-6">
             {text3}{" "}

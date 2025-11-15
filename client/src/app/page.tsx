@@ -142,7 +142,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-labelledby="features-title" className="w-full bg-white dark:bg-slate-800">
+      <section
+        aria-labelledby="features-title"
+        className="w-full bg-white dark:bg-slate-800"
+      >
         <div className="max-w-[1400px] mx-auto px-6 py-16">
           <h2
             id="features-title"

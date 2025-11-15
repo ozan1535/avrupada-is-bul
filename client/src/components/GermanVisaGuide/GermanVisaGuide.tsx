@@ -12,34 +12,28 @@ import { KindeUser } from "@kinde-oss/kinde-auth-nextjs";
 import { useRouter } from "next/navigation";
 import LoginDialog from "../Dialog/LoginDialog/LoginDialog";
 import Image from "next/image";
+import EmailDialog from "../Dialog/EmailDialog/EmailDialog";
 
-function GermanVisaGuide({
+function GermanVisaGuide(/* {
   user,
 }: {
   user: KindeUser<Record<string, any>> | null;
-}) {
-  const router = useRouter();
+} */) {
+  /*   const router = useRouter(); */
   const [canShowDialog, setCanShowDialog] = useState(false);
-  const handleDownload = () => {
-    if (!user) {
-      setCanShowDialog(true);
-      return;
-    }
-    // Create a link element and trigger download
-    const link = document.createElement("a");
-    link.href = "/almanya-vize-rehberi.pdf";
-    link.download = "almanya-vize-rehberi.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    sendGAEvent("event", "Almanya Vize Rehberi indirildi.", {
-      screen: "almanya-vize-rehberi",
-    });
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 sm:mt-20 via-white to-yellow-50">
       {canShowDialog && (
+        <EmailDialog
+          open={canShowDialog}
+          setOpen={setCanShowDialog}
+          title="Almanya Vize Rehberi"
+          cancelText="Vazgeç"
+          continueText="İndir"
+        />
+      )}
+      {/* {canShowDialog && (
         <LoginDialog
           open={canShowDialog}
           setOpen={setCanShowDialog}
@@ -51,7 +45,7 @@ function GermanVisaGuide({
             router.push("/giris-yap");
           }}
         />
-      )}
+      )} */}
       {/* Header */}
       {/*  <header className="bg-white shadow-sm border-b-2 border-red-600">
     <div className="max-w-4xl mx-auto px-6 py-4">
@@ -82,7 +76,7 @@ function GermanVisaGuide({
                 vize türünü seçmek başarının anahtarı!
               </p>
               <button
-                onClick={handleDownload}
+                onClick={() => setCanShowDialog(true)}
                 className="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-red-50 transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <Download className="w-5 h-5" />
@@ -268,15 +262,12 @@ function GermanVisaGuide({
             hayalinizdeki Almanya deneyimini yaşayın.
           </p>
           <button
-            onClick={handleDownload}
+            onClick={() => setCanShowDialog(true)}
             className="bg-white text-red-600 px-10 py-4 rounded-lg font-bold text-lg hover:bg-red-50 transition-all duration-300 flex items-center gap-3 mx-auto shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             <Download className="w-6 h-6" />
             Ücretsiz PDF İndir
           </button>
-          <p className="text-red-200 text-sm mt-4">
-            * Rehber tamamen ücretsizdir ve herhangi bir kayıt gerektirmez
-          </p>
         </div>
       </main>
 
