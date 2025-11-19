@@ -31,6 +31,8 @@ function GermanVisaGuide(/* {
           title="Almanya Vize Rehberi"
           cancelText="Vazgeç"
           continueText="İndir"
+          href="almanya-vize-rehberi.pdf"
+          gaEventText="Almanya Vize Rehberi indirildi."
         />
       )}
       {/* {canShowDialog && (
