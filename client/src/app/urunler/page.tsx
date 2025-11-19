@@ -4,8 +4,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "Uluslararası Kariyer - Ürünler",
-  description:
-    "Yurtdışına çıkmak için e-booklarımızdan faydalanın",
+  description: "Yurtdışına çıkmak için e-booklarımızdan faydalanın",
 };
 
 function page() {
@@ -21,6 +20,12 @@ function page() {
 İster turistik bir gezi, ister kariyer hedefleri, ister eğitim fırsatları - doğru vize türünü seçmek başarının
 anahtarı!"
               link="/urunler/almanya-vize-rehberi"
+            />
+            <BlogCard
+              imageSrc="/green-card-basvuru-rehberi.png"
+              title="Green Card Basvuru Rehberi"
+              description="ABD Green Card çekilişine başvurmayı mı düşünüyorsunuz? Doğru fotoğraf, gereken belgeler, başvuru adımları ve sık yapılan hatalar dahil, başvuru sürecini eksiksiz tamamlamanız için kapsamlı bir Green Card rehberi hazırladık. İlk kez başvuranlar için anlaşılır, güncel ve adım adım yol gösteren bir kaynak!"
+              link="/urunler/green-card-basvuru-rehberi"
             />
           </div>
         </div>
