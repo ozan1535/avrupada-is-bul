@@ -22,12 +22,16 @@ function EmailDialog({
   title,
   cancelText,
   continueText,
+  href,
+  gaEventText,
 }: {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   title: string;
   cancelText: string;
   continueText: string;
+  href: string;
+  gaEventText: string;
 }) {
   const supabase = createClient();
   const [form, setForm] = useState({ name: "", email: "" });
@@ -93,12 +97,12 @@ function EmailDialog({
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/almanya-vize-rehberi.pdf";
-    link.download = "almanya-vize-rehberi.pdf";
+    link.href = `/${href}`;
+    link.download = href;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    sendGAEvent("event", "Almanya Vize Rehberi indirildi.", {
+    sendGAEvent("event", gaEventText, {
       email: form.email,
     });
   };
