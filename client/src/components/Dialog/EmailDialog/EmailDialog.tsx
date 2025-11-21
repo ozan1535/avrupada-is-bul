@@ -74,6 +74,7 @@ function EmailDialog({
       const { error: insertError } = await supabase.from("subscribers").insert({
         email: form.email,
         name: form.name || null,
+        title,
       });
 
       if (insertError) {
