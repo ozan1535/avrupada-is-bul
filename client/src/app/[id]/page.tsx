@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 async function page({ params }: { params: { id: string } }) {
   const { id } = await params;
   const res = await fetch(
-    `https://europa.eu/eures/eures-apps/searchengine/page/jv/id/${id}?lang=en`
+    `https://europa.eu/eures/api/jv-searchengine/public/jv/id/${id}?lang=en`
   );
 
   const data: IJobDetailResponse = await res.json();
