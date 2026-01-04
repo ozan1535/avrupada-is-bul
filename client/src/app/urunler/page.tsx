@@ -23,9 +23,15 @@ anahtarı!"
             />
             <BlogCard
               imageSrc="/green-card-basvuru-rehberi.png"
-              title="Green Card Basvuru Rehberi"
+              title="Green Card Başvuru Rehberi"
               description="ABD Green Card çekilişine başvurmayı mı düşünüyorsunuz? Doğru fotoğraf, gereken belgeler, başvuru adımları ve sık yapılan hatalar dahil, başvuru sürecini eksiksiz tamamlamanız için kapsamlı bir Green Card rehberi hazırladık. İlk kez başvuranlar için anlaşılır, güncel ve adım adım yol gösteren bir kaynak!"
               link="/urunler/green-card-basvuru-rehberi"
+            />
+            <BlogCard
+              imageSrc="/schengen-vizesi-basvuru-rehberi.png"
+              title="Schengen Vizesi Başvuru Rehberi"
+              description="Schengen vizesi başvuru sürecini adım adım anlatan bu rehber; gerekli belgeler, randevu, ücretler ve ipuçlarıyla süreci kolaylaştırır."
+              link="/urunler/schengen-vizesi-basvuru-rehberi"
             />
           </div>
         </div>
