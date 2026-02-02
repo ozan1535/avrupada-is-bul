@@ -140,6 +140,14 @@ export const handleJobsFetch = async (req, res) => {
     return res.json(cachedData);
   }
   try {
+    let executablePath;
+  try {
+    executablePath = await chromium.executablePath();
+  } catch (e) {
+    // Retry once if it fails
+    await new Promise(resolve => setTimeout(resolve, 100));
+    executablePath = await chromium.executablePath();
+  }
     const browser = await puppeteer.launch({
       args: [
         ...chromium.args,
@@ -153,7 +161,7 @@ export const handleJobsFetch = async (req, res) => {
         "--disable-gpu",
       ],
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(),
+      executablePath: executablePath,
       headless: chromium.headless,
     });
     //const browser = await puppeteer.launch({ headless: true });
