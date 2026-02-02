@@ -76,7 +76,7 @@ export function JobsDataProvider({ children }: { children: React.ReactNode }) {
 
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}api/jobs?${query.toString()}`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/jobs?${query.toString()}`
         );
         const result = await res.json();
         setData(result);
