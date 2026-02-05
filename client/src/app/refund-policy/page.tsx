@@ -1,5 +1,7 @@
 import {RefundPolicy} from "@/components/RefundPolicy/RefundPolicy"
 
-function App() {
+function page() {
   return <RefundPolicy />;
 }
+
+export default page;
