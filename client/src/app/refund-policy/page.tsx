@@ -1,4 +1,4 @@
-import {RefundPolicy} from "@/components/RefundPolicy/RefundPolicy"
+import RefundPolicy from "@/components/RefundPolicy/RefundPolicy";
 
 function page() {
   return <RefundPolicy />;

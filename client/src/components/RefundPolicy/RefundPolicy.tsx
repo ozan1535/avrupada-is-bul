@@ -2,7 +2,7 @@ import React from "react";
 
 const RefundPolicy = () => {
   return (
-    <section className="max-w-4xl mx-auto px-6 py-12">
+    <section className="max-w-4xl mx-auto px-6 py-20">
       <h1 className="text-3xl font-bold mb-6 text-gray-900">
         İade ve İptal Politikası
       </h1>
@@ -19,8 +19,8 @@ const RefundPolicy = () => {
           </h2>
           <p>
             E-kitaplar ve diğer dijital ürünler, ödeme başarıyla tamamlandıktan
-            sonra anında teslim edilir. Dijital ürünlerin doğası gereği,
-            ürün indirildikten veya erişim sağlandıktan sonra{" "}
+            sonra anında teslim edilir. Dijital ürünlerin doğası gereği, ürün
+            indirildikten veya erişim sağlandıktan sonra{" "}
             <span className="font-medium">genellikle iade edilemez</span>.
           </p>
         </div>
@@ -30,8 +30,7 @@ const RefundPolicy = () => {
             İstisnai Durumlar
           </h2>
           <p>
-            Aşağıdaki durumlarda iade talepleri duruma göre
-            değerlendirilebilir:
+            Aşağıdaki durumlarda iade talepleri duruma göre değerlendirilebilir:
           </p>
           <ul className="list-disc list-inside mt-2 space-y-1">
             <li>E-kitabın indirilememesi veya erişim sorunları</li>
@@ -60,9 +59,7 @@ const RefundPolicy = () => {
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">
-            İptaller
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">İptaller</h2>
           <p>
             Dijital ürünler satın alındıktan hemen sonra teslim edildiği için,
             satın alma işlemi tamamlandıktan sonra iptal mümkün değildir.

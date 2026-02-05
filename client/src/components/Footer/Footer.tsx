@@ -233,6 +233,12 @@ export default function Footer() {
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
               <Link
+                href="/refund-policy"
+                className="text-gray-300 hover:text-[#0a66c2] transition-colors duration-200"
+              >
+                Ödeme Politikası
+              </Link>
+              <Link
                 href="/gizlilik-politikasi"
                 className="text-gray-300 hover:text-[#0a66c2] transition-colors duration-200"
               >
