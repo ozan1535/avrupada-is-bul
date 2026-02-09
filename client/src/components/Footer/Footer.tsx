@@ -232,12 +232,12 @@ export default function Footer() {
               © {currentYear} Uluslararası Kariyer. Tüm hakları saklıdır.
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
-              <Link
+              {/*  <Link
                 href="/refund-policy"
                 className="text-gray-300 hover:text-[#0a66c2] transition-colors duration-200"
               >
                 Ödeme Politikası
-              </Link>
+              </Link> */}
               <Link
                 href="/gizlilik-politikasi"
                 className="text-gray-300 hover:text-[#0a66c2] transition-colors duration-200"

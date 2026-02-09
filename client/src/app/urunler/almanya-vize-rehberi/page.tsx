@@ -1,6 +1,7 @@
 import GermanVisaGuide from "@/components/GermanVisaGuide/GermanVisaGuide";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Uluslararası Kariyer - Almanya Vize Rehberi",
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
 };
 
 const page = async () => {
+  redirect("/");
+
   // const { getUser } = getKindeServerSession();
   // const user = await getUser();
   return <GermanVisaGuide /* user={user} */ />;

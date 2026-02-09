@@ -20,10 +20,10 @@ const navItems = [
     name: "Ana Sayfa",
     link: "/",
   },
-  {
+  /*   {
     name: "İş	İlanları",
     link: "/yurtdisi-is-ilanlari",
-  },
+  }, */
   {
     name: "Blog",
     link: "/blog",
@@ -32,10 +32,10 @@ const navItems = [
     name: "Araçlar",
     link: "/araclar",
   },
-  {
+  /*  {
     name: "Ürünler",
     link: "/urunler",
-  },
+  }, */
 ];
 function Header() {
   return (

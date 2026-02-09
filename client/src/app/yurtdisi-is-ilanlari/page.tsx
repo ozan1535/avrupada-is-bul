@@ -2,6 +2,7 @@ import React from "react";
 import InputsSection from "@/components/JobsPageComponents/InputsSection/InputsSection";
 import JobListingWithPagination from "@/components/JobListingWithPagination/JobListingWithPagination";
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Uluslararası Kariyer - Yurtdışı İş İlanları",
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 async function page() {
+  redirect("/");
+
   return (
     <div className="w-full sm:mt-5">
       <div className="flex justify-between gap-2">

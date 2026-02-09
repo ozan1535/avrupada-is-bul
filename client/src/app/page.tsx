@@ -68,7 +68,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
+      {/*  <section
         aria-labelledby="featured-jobs-title"
         className="w-full bg-white dark:bg-slate-800"
       >
@@ -91,7 +91,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-slate-100 dark:bg-slate-700">
         <div className="container mx-auto py-4 md:py-8 px-4">
@@ -142,7 +142,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
+      {/*  <section
         aria-labelledby="features-title"
         className="w-full bg-white dark:bg-slate-800"
       >
@@ -156,7 +156,7 @@ export default function Home() {
 
           <PositionCards />
         </div>
-      </section>
+      </section> */}
 
       <section className="w-full bg-slate-100 dark:bg-slate-700">
         <AllStatBoxes />
