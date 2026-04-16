@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Uluslararası Kariyer - Vize Araçları",
+  title: "Vize Araçları - Uluslararası Kariyer",
   description:
     "Uluslararası Kariyer'in sunduğu vize ve çalışma izni araçları ile Avrupa'da kariyer planınızı oluşturun. Farklı ülkeler için puan hesaplama, uygunluk analizi ve rehber içeriklere erişin.",
 };

@@ -1,103 +1,149 @@
-import React from "react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import Link from "next/link";
-import DarkModeComponent from "../DarkModeComponent/DarkModeComponent";
-import MobileFilterBar from "../MobileFilterBar/MobileFilterBar";
-import Image from "next/image";
-import UserDropdownMenu from "../UserDropdownMenu/UserDropdownMenu";
-/* import GoogleTranslate from "../GoogleTranslate/GoogleTranslate";
- */
+// import React from "react";
+// import {
+//   NavigationMenu,
+//   NavigationMenuContent,
+//   NavigationMenuItem,
+//   NavigationMenuLink,
+//   NavigationMenuList,
+//   navigationMenuTriggerStyle,
+// } from "@/components/ui/navigation-menu";
+// import Link from "next/link";
+// import DarkModeComponent from "../DarkModeComponent/DarkModeComponent";
+// /* import MobileFilterBar from "../MobileFilterBar/MobileFilterBar";
+//  */import Image from "next/image";
+// import UserDropdownMenu from "../UserDropdownMenu/UserDropdownMenu";
+// /* import GoogleTranslate from "../GoogleTranslate/GoogleTranslate";
+//  */
 
-const navItems = [
-  {
-    name: "Ana Sayfa",
-    link: "/",
-  },
-  /*   {
-    name: "İş	İlanları",
-    link: "/yurtdisi-is-ilanlari",
-  }, */
-  {
-    name: "Blog",
-    link: "/blog",
-  },
-  {
-    name: "Araçlar",
-    link: "/araclar",
-  },
-  /*  {
-    name: "Ürünler",
-    link: "/urunler",
-  }, */
-];
+// const navItems = [
+//   {
+//     name: "Ana Sayfa",
+//     link: "/",
+//   },
+//   /*   {
+//     name: "İş	İlanları",
+//     link: "/yurtdisi-is-ilanlari",
+//   }, */
+//   {
+//     name: "Blog",
+//     link: "/blog",
+//   },
+//   {
+//     name: "Araçlar",
+//     link: "/araclar",
+//   },
+//   /*  {
+//     name: "Ürünler",
+//     link: "/urunler",
+//   }, */
+// ];
+// function Header() {
+//   return (
+//     <>
+//       <div className="block md:hidden">
+//         <div className="w-full text-center p-2 text-white font-black flex justify-between items-center">
+//           <Link href="/">
+//             <Image
+//               src="/webapp-logo.png"
+//               alt="Logo"
+//               width={120}
+//               height={75}
+//               className="h-10 object-cover"
+//               priority
+//             />
+//           </Link>
+//           <div className="flex items-center gap-2">
+//             <UserDropdownMenu />
+//             <DarkModeComponent />
+//           </div>
+//         </div>
+//         {/* <MobileFilterBar /> */}
+//       </div>
+//       <header className="fixed top-0 left-0 right-0 z-[100] bg-white hidden md:flex h-10 md:h-16 items-center border-b shadow-sm dark:bg-[#1d293d]">
+//         <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
+//           <div className="text-2xl font-bold text-primary-color">
+//             <Link href="/">
+//               <Image
+//                 src="/webapp-logo.png"
+//                 alt="Logo"
+//                 width={100}
+//                 height={90}
+//                 className="h-32 w-auto object-contain"
+//                 priority
+//               />
+//             </Link>
+//           </div>
+
+//           <NavigationMenu viewport={false}>
+//             <NavigationMenuList>
+//               {navItems.map((item) => (
+//                 <NavigationMenuItem key={item.link}>
+//                   <NavigationMenuLink
+//                     //   asChild
+//                     className={navigationMenuTriggerStyle()}
+//                     href={item.link}
+//                   >
+//                     {item.name}
+//                   </NavigationMenuLink>
+//                 </NavigationMenuItem>
+//               ))}
+//             </NavigationMenuList>
+//           </NavigationMenu>
+//           <div className="flex items-center gap-2">
+//             {/*    <GoogleTranslate /> */}
+//             <UserDropdownMenu />
+//             <DarkModeComponent />
+//             {/*  <AuthButton /> */}
+//           </div>
+//         </div>
+//       </header>
+//     </>
+//   );
+// }
+
+// export default Header;
+
+import Link from "next/link";
+import React from "react";
+
 function Header() {
   return (
-    <>
-      <div className="block md:hidden">
-        <div className="w-full text-center p-2 text-white font-black flex justify-between items-center">
-          <Link href="/">
-            <Image
-              src="/webapp-logo.png"
-              alt="Logo"
-              width={120}
-              height={75}
-              className="h-10 object-cover"
-              priority
-            />
+    <nav className="sticky top-0 z-50 bg-white border-b border-slate-200">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 h-[68px] flex items-center justify-between">
+        <Link
+          href="/"
+          className="font-serif text-[20px] text-[#1B2B4A] tracking-tight"
+        >
+          Uluslararası<span className="text-[#4A7BC8]">Kariyer</span>
+        </Link>
+        <div className="hidden md:flex items-center gap-8">
+          <Link
+            href="/vize-rehberi"
+            className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+          >
+            Vize Rehberleri
           </Link>
-          <div className="flex items-center gap-2">
-            <UserDropdownMenu />
-            <DarkModeComponent />
-          </div>
+          {/* <Link
+            href="/araclar"
+            className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+          >
+            Araçlar
+          </Link> */}
+          <Link
+            href="/blog"
+            className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+          >
+            Blog
+          </Link>
+          <Link
+            href="/araclar"
+            className="bg-[#1B2B4A] text-white text-[13px] font-medium px-5 py-2 rounded-md hover:bg-[#2D4270] transition-colors"
+          >
+            Puan Hesapla
+          </Link>
         </div>
-        <MobileFilterBar />
       </div>
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white hidden md:flex h-10 md:h-16 items-center border-b shadow-sm dark:bg-[#1d293d]">
-        <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
-          <div className="text-2xl font-bold text-primary-color">
-            <Link href="/">
-              <Image
-                src="/webapp-logo.png"
-                alt="Logo"
-                width={100}
-                height={90}
-                className="h-32 w-auto object-contain"
-                priority
-              />
-            </Link>
-          </div>
-
-          <NavigationMenu viewport={false}>
-            <NavigationMenuList>
-              {navItems.map((item) => (
-                <NavigationMenuItem key={item.link}>
-                  <NavigationMenuLink
-                    //   asChild
-                    className={navigationMenuTriggerStyle()}
-                    href={item.link}
-                  >
-                    {item.name}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-          <div className="flex items-center gap-2">
-            {/*    <GoogleTranslate /> */}
-            <UserDropdownMenu />
-            <DarkModeComponent />
-            {/*  <AuthButton /> */}
-          </div>
-        </div>
-      </header>
-    </>
+    </nav>
   );
 }
 
