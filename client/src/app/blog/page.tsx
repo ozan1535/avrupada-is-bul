@@ -15,6 +15,18 @@ function page() {
         <div className="max-w-[1400px] flex justify-center mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24">
           <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             <BlogCard
+              imageSrc="https://images.unsplash.com/photo-1587330979470-3595ac045ab0"
+              title="Almanya'da İş Bulma Rehberi 2026 | Yabancılar İçin Adım Adım Kılavuz"
+              description="Almanya'da iş aramak için bilmeniz gereken her şey: hangi sektörler yabancılara açık, CV ve motivasyon mektubu nasıl hazırlanır, çalışma vizesi nasıl alınır. 2026 güncel rehber."
+              link="/blog/almanya-is-bulma-rehberi"
+            />
+            <BlogCard
+              imageSrc="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80"
+              title="Avrupa'da En Çok Talep Gören Meslekler"
+              description="2025'te Avrupa'da en çok aranan meslekler hangileri? Teknoloji, sağlık, mühendislik ve daha fazlasında yükselen kariyer fırsatlarını keşfedin."
+              link="/blog/avrupada-en-cok-talep-goren-meslekler"
+            />
+            <BlogCard
               imageSrc="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&q=80"
               title="Avrupa'da Çalışmak için En İyi 10 Ülke"
               description="Avrupa kıtası, gelişmiş ekonomisi, güçlü sosyal hakları, çok kültürlü yapısı ve yüksek yaşam standartları ile dünya çapında profesyonellerin gözde tercihi konumunda. 500 milyondan fazla nüfusu ile dünyanın en büyük tek pazarını oluşturuyor."
@@ -32,12 +44,7 @@ function page() {
               description="Avrupa'da kariyer yapmak isteyen profesyoneller için psikoloji temelli, kanıtlanmış ve aksiyon odaklı stratejilerle dolu kapsamlı rehber. 15+ yıllık deneyimle hazırlanmış bu kaynakla zihniyet, beceri geliştirme, networking ve büyüme alanlarında fark yaratın."
               link="/blog/avrupada-kariyer-yapmanin-puf-noktalari"
             />
-            <BlogCard
-              imageSrc="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80"
-              title="Avrupa'da En Çok Talep Gören Meslekler"
-              description="2025'te Avrupa'da en çok aranan meslekler hangileri? Teknoloji, sağlık, mühendislik ve daha fazlasında yükselen kariyer fırsatlarını keşfedin."
-              link="/blog/avrupada-en-cok-talep-goren-meslekler"
-            />
+
             <BlogCard
               imageSrc="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80"
               title="Avrupa'da İş Ararken Dikkat Etmeniz Gereken 7 Önemli Adım"

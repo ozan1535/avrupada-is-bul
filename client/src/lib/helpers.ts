@@ -409,8 +409,8 @@ export const rwrCardCalculatorItems = [
     0: [
       {
         id: 46,
-        text: "30 yaşa kadar (30 puan)",
-        point: 30,
+        text: "30 yaşa kadar (15 puan)",
+        point: 15,
       },
       {
         id: 47,
@@ -426,8 +426,8 @@ export const rwrCardCalculatorItems = [
     1: [
       {
         id: 49,
-        text: "30 yaşa kadar (30 puan)",
-        point: 30,
+        text: "30 yaşa kadar (15 puan)",
+        point: 15,
       },
       {
         id: 50,
