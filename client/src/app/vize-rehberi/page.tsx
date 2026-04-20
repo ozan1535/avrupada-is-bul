@@ -15,6 +15,12 @@ function page() {
         <div className="max-w-[1400px] flex justify-center mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24">
           <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             <BlogCard
+              imageSrc="https://images.unsplash.com/photo-1656597787628-62741d181641?w=1600&q=80&auto=format&fit=crop"
+              title="İspanya Vize Başvurusu 2026 – Türkiye'den Eksiksiz Rehber"
+              description="2026'da İspanya vizesi nasıl alınır? Schengen vize türleri, gerekli belgeler, BLS başvuru merkezleri, güncel ücretler ve randevu süreci. Türk vatandaşları için eksiksiz rehber."
+              link="/vize-rehberi/ispanya-vizesi-nasil-alinir"
+            />
+            <BlogCard
               imageSrc="https://images.unsplash.com/photo-1587330979470-3595ac045ab0"
               title="Almanya Vize Başvurusu 2026 – Türkiye'den Eksiksiz Rehber"
               description="Almanya vize türleri, başvuru şartları, gerekli belgeler, ücretler ve randevu bilgileri. T.C. vatandaşları için güncel ve kapsamlı Almanya vize rehberi."
