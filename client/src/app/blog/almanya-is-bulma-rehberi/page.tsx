@@ -786,7 +786,7 @@ export default function AlmanyaIsRehberiPage() {
       </section>
 
       {/* ── CTA ── */}
-      {/* <section className="bg-gradient-to-br from-[#1B2B4A] to-[#243a63] py-16">
+      <section className="bg-gradient-to-br from-[#1B2B4A] to-[#243a63] py-16">
         <div className="mx-auto max-w-[900px] px-6 text-center">
           <p className="text-[#4A7BC8] text-xs font-semibold tracking-widest uppercase mb-4">
             Almanya Kariyer Planlaması
@@ -799,13 +799,14 @@ export default function AlmanyaIsRehberiPage() {
             hedeflerinize yönelik kişisel yol haritası
           </p>
           <a
-            href="/danismanlik"
+            target="_blank"
+            href="https://www.shopier.com/uluslararasikariyer/46350963"
             className="inline-block bg-[#4A7BC8] hover:bg-[#3a6ab8] text-white font-sans font-semibold text-sm px-8 py-4 rounded-xl transition-colors"
           >
-            Ücretsiz Danışmanlık Al →
+            Avrupa'da İş Bulmanın Gerçek Yolu →
           </a>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 }
