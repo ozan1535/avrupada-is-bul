@@ -15,6 +15,12 @@ function page() {
         <div className="max-w-[1400px] flex justify-center mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24">
           <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             <BlogCard
+              imageSrc="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=85"
+              title="Yurt Dışı Çıkış Harcı Ne Kadar 2026 — Nasıl Ödenir, Kimler Muaf?"
+              description="2026 yılında güncellenen yurt dışı çıkış harcını kim öder, kim muaf, nereye nasıl ödenir? Dijital ödeme linki, muafiyet listesi ve sık sorulan sorularla eksiksiz rehber."
+              link="/blog/yurtdisi-cikis-harci-ne-kadar"
+            />
+            <BlogCard
               imageSrc="https://images.unsplash.com/photo-1587330979470-3595ac045ab0"
               title="Almanya'da İş Bulma Rehberi 2026 | Yabancılar İçin Adım Adım Kılavuz"
               description="Almanya'da iş aramak için bilmeniz gereken her şey: hangi sektörler yabancılara açık, CV ve motivasyon mektubu nasıl hazırlanır, çalışma vizesi nasıl alınır. 2026 güncel rehber."
