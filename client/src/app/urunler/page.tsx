@@ -1,5 +1,6 @@
 import BlogCard from "@/components/BlogCard/BlogCard";
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 function page() {
+  redirect("/");
   return (
     <div className="w-full bg-white dark:bg-slate-800">
       <section aria-labelledby="hero-title" className="w-full">

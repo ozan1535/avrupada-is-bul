@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Uluslararası Kariyer - Vize Araçları",
+  title: "Vize Araçları - Uluslararası Kariyer",
   description:
     "Uluslararası Kariyer'in sunduğu vize ve çalışma izni araçları ile Avrupa'da kariyer planınızı oluşturun. Farklı ülkeler için puan hesaplama, uygunluk analizi ve rehber içeriklere erişin.",
 };
@@ -14,6 +14,12 @@ function page() {
       <section aria-labelledby="hero-title" className="w-full">
         <div className="max-w-[1400px] flex justify-center mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24">
           <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+            <BlogCard
+              imageSrc="/schengen-vize.jpg"
+              title="Schengen Vizesi Red Riski Tarama"
+              description="Schengen vize başvurusundan önce reddedilme riskini öğrenin. Finansal durum, iş geçmişi, seyahat geçmişi ve belge hazırlığını analiz eden ücretsiz değerlendirme aracı."
+              link="/araclar/schengen-vizesi-red-riski-tarama"
+            />
             <BlogCard
               imageSrc="/avusturya-rwr-card.jpeg"
               title="Avusturya Red-White-Red (Rot-Weiß-Rot ) Kart Puan Hesaplama"

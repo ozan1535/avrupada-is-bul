@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://uluslararasi-kariyer.com/
+
+# Sitemaps
+Sitemap: https://uluslararasi-kariyer.com/sitemap.xml
