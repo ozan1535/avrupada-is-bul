@@ -2,7 +2,7 @@ import { IJobData } from "@/context/JobsDataContext";
 import { Briefcase, Building2, ChevronRight, MapPin } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import AddFavoriteButton from "../AddFavoriteButton/AddFavoriteButton";
+// import AddFavoriteButton from "../AddFavoriteButton/AddFavoriteButton";
 
 function JobListingCard({ item }: { item: IJobData }) {
   return (
@@ -47,7 +47,7 @@ function JobListingCard({ item }: { item: IJobData }) {
                 </div>
               ) : null}
 
-              <AddFavoriteButton
+              {/* <AddFavoriteButton
                 job={{
                   job_id: item.jobId,
                   job_title: item.jobTitle,
@@ -56,7 +56,7 @@ function JobListingCard({ item }: { item: IJobData }) {
                   company_country: item.locations[0]?.country || "",
                   position_schedule: item.positionSchedules[0]?.schedule || "",
                 }}
-              />
+              /> */}
             </div>
 
             <Link

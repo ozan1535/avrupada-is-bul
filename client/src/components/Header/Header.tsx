@@ -103,47 +103,175 @@
 
 // export default Header;
 
+// import Link from "next/link";
+// import React from "react";
+// import MobileFilterBar from "../MobileFilterBar/MobileFilterBar";
+
+// function Header() {
+//   return (
+//     <>
+//       <nav className="sticky top-0 z-50 bg-white border-b border-slate-200">
+//         <div className="max-w-[1280px] mx-auto px-6 lg:px-12 h-[68px] flex items-center justify-between">
+//           <Link
+//             href="/"
+//             className="font-serif text-[20px] text-[#1B2B4A] tracking-tight"
+//           >
+//             Uluslararası<span className="text-[#4A7BC8]">Kariyer</span>
+//           </Link>
+//           <div className="hidden md:flex items-center gap-8">
+//             <Link
+//               href="/yurtdisi-is-ilanlari"
+//               className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+//             >
+//               İş İlanları
+//             </Link>
+//             <Link
+//               href="/vize-rehberi"
+//               className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+//             >
+//               Vize Rehberleri
+//             </Link>
+
+//             {/* <Link
+//             href="/araclar"
+//             className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+//             >
+//             Araçlar
+//             </Link> */}
+//             <Link
+//               href="/blog"
+//               className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+//             >
+//               Blog
+//             </Link>
+//             <Link
+//               href="/araclar"
+//               className="bg-[#1B2B4A] text-white text-[13px] font-medium px-5 py-2 rounded-md hover:bg-[#2D4270] transition-colors"
+//             >
+//               Puan Hesapla
+//             </Link>
+//           </div>
+//         </div>
+//       </nav>
+//       <MobileFilterBar />
+//     </>
+//   );
+// }
+
+// export default Header;
+
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import MobileFilterBar from "../MobileFilterBar/MobileFilterBar";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-slate-200">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 h-[68px] flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-serif text-[20px] text-[#1B2B4A] tracking-tight"
-        >
-          Uluslararası<span className="text-[#4A7BC8]">Kariyer</span>
-        </Link>
-        <div className="hidden md:flex items-center gap-8">
+    <>
+      <nav className="sticky top-0 z-50 bg-white border-b border-slate-200">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-12 h-[68px] flex items-center justify-between">
+          {/* Logo */}
           <Link
-            href="/vize-rehberi"
-            className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+            href="/"
+            className="font-serif text-[20px] text-[#1B2B4A] tracking-tight"
           >
-            Vize Rehberleri
+            Uluslararası<span className="text-[#4A7BC8]">Kariyer</span>
           </Link>
-          {/* <Link
-            href="/araclar"
-            className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link
+              href="/yurtdisi-is-ilanlari"
+              className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+            >
+              İş İlanları
+            </Link>
+            <Link
+              href="/vize-rehberi"
+              className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+            >
+              Vize Rehberleri
+            </Link>
+            <Link
+              href="/blog"
+              className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/araclar"
+              className="bg-[#1B2B4A] text-white text-[13px] font-medium px-5 py-2 rounded-md hover:bg-[#2D4270] transition-colors"
+            >
+              Puan Hesapla
+            </Link>
+          </div>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            className="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
           >
-            Araçlar
-          </Link> */}
-          <Link
-            href="/blog"
-            className="text-[14px] text-slate-500 hover:text-[#1B2B4A] transition-colors"
-          >
-            Blog
-          </Link>
-          <Link
-            href="/araclar"
-            className="bg-[#1B2B4A] text-white text-[13px] font-medium px-5 py-2 rounded-md hover:bg-[#2D4270] transition-colors"
-          >
-            Puan Hesapla
-          </Link>
+            <span
+              className={`block w-5 h-[2px] bg-[#1B2B4A] transition-all duration-300 ${
+                menuOpen ? "rotate-45 translate-y-[7px]" : ""
+              }`}
+            />
+            <span
+              className={`block w-5 h-[2px] bg-[#1B2B4A] transition-all duration-300 ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block w-5 h-[2px] bg-[#1B2B4A] transition-all duration-300 ${
+                menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
+              }`}
+            />
+          </button>
         </div>
-      </div>
-    </nav>
+
+        {/* Mobile Menu Dropdown */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            menuOpen ? "max-h-64 border-t border-slate-100" : "max-h-0"
+          }`}
+        >
+          <div className="flex flex-col px-6 py-4 gap-4 bg-white">
+            <Link
+              href="/yurtdisi-is-ilanlari"
+              onClick={() => setMenuOpen(false)}
+              className="text-[14px] text-slate-600 hover:text-[#1B2B4A] transition-colors py-1"
+            >
+              İş İlanları
+            </Link>
+            <Link
+              href="/vize-rehberi"
+              onClick={() => setMenuOpen(false)}
+              className="text-[14px] text-slate-600 hover:text-[#1B2B4A] transition-colors py-1"
+            >
+              Vize Rehberleri
+            </Link>
+            <Link
+              href="/blog"
+              onClick={() => setMenuOpen(false)}
+              className="text-[14px] text-slate-600 hover:text-[#1B2B4A] transition-colors py-1"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/araclar"
+              onClick={() => setMenuOpen(false)}
+              className="bg-[#1B2B4A] text-white text-[13px] font-medium px-5 py-2 rounded-md hover:bg-[#2D4270] transition-colors text-center"
+            >
+              Puan Hesapla
+            </Link>
+          </div>
+        </div>
+      </nav>
+      <MobileFilterBar />
+    </>
   );
 }
 

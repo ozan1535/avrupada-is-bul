@@ -35,7 +35,7 @@ function JobListingWithPagination() {
         Array.from({ length: 7 }).map((_, index) => (
           <SkeletonComponent key={index} />
         ))
-      ) : data?.data.length ? (
+      ) : data?.data?.length ? (
         <div>
           {data?.data.map((item, i) => (
             <JobListingCard item={item} key={i} />

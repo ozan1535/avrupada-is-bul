@@ -10,7 +10,7 @@ export default function Layout({ children }: IChildrenReactElement) {
     </SidebarProvider> */
     <SidebarProvider className="flex flex-1">
       <AppSidebar />
-      <main className="flex-1 min-h-0 overflow-auto sm:mt-16">
+      <main className="flex-1 min-h-0 overflow-auto">
         <div className="p-4 sm:p-6 pb-8">{children}</div>
       </main>
     </SidebarProvider>

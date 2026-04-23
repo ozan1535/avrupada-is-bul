@@ -4,9 +4,9 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import { ThemeProvider } from "@/components/theme-provider";/* 
+import { ThemeProvider } from "@/components/theme-provider";
 import { FilterProvider } from "@/context/FilterContext";
-import { JobsDataProvider } from "@/context/JobsDataContext"; */
+import { JobsDataProvider } from "@/context/JobsDataContext";
 //import GoogleTranslate from "@/components/GoogleTranslate/GoogleTranslate";
 
 const geistSans = Geist({
@@ -34,25 +34,25 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/*  <FilterProvider>
-          <JobsDataProvider> */}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="min-h-screen flex flex-col">
-            <Header />
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </div>
-          {process.env.NEXT_PUBLIC_IS_PRODUCTION && (
-            <GoogleAnalytics gaId="G-4QYJWXXMRR" />
-          )}
-        </ThemeProvider>
-        {/*   </JobsDataProvider>
-        </FilterProvider> */}
+        <FilterProvider>
+          <JobsDataProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="light"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <div className="min-h-screen flex flex-col">
+                <Header />
+                <div className="flex-1">{children}</div>
+                <Footer />
+              </div>
+              {process.env.NEXT_PUBLIC_IS_PRODUCTION && (
+                <GoogleAnalytics gaId="G-4QYJWXXMRR" />
+              )}
+            </ThemeProvider>
+          </JobsDataProvider>
+        </FilterProvider>
       </body>
     </html>
   );

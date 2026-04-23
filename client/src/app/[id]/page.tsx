@@ -4,7 +4,7 @@ import { euCountries, euLanguages, workingSchedules } from "@/lib/helpers";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { IJobDetailResponse } from "./types";
-import AddFavoriteButton from "@/components/AddFavoriteButton/AddFavoriteButton";
+// import AddFavoriteButton from "@/components/AddFavoriteButton/AddFavoriteButton";
 
 export const metadata: Metadata = {
   title: "Uluslararası Kariyer - İş İlanı",
@@ -32,7 +32,7 @@ async function page({ params }: { params: { id: string } }) {
               <p className="text-2xl font-semibold text-primary-color">
                 {jobDetails?.title}
               </p>
-              <AddFavoriteButton
+              {/* <AddFavoriteButton
                 job={{
                   job_id: id,
                   job_title: jobDetails?.title,
@@ -55,7 +55,7 @@ async function page({ params }: { params: { id: string } }) {
                         .join(", ")
                     : "Belirtilmemiş",
                 }}
-              />
+              /> */}
             </div>
           </div>
           <div className="flex flex-col justify-center gap-2 space-y-1">
