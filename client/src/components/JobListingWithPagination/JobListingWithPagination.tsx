@@ -11,6 +11,7 @@ import {
 } from "../ui/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useFilter } from "@/context/FilterContext";
+import JobDetailSheet from "../JobDetailSheet/JobDetailSheet";
 
 function JobListingWithPagination() {
   const { data, loading, refetch } = useJobsDataContext();
@@ -97,6 +98,7 @@ function JobListingWithPagination() {
       ) : (
         <p>Bu filtrelemeye uygun herhangi bir ilan bulunamadı.</p>
       )}
+      <JobDetailSheet />
     </div>
   );
 }

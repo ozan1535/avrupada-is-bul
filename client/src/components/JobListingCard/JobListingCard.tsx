@@ -2,11 +2,24 @@ import { IJobData } from "@/context/JobsDataContext";
 import { Briefcase, Building2, ChevronRight, MapPin } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+
 // import AddFavoriteButton from "../AddFavoriteButton/AddFavoriteButton";
 
 function JobListingCard({ item }: { item: IJobData }) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const handleClick = () => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("jobId", item.jobId);
+    router.push(`?${params.toString()}`, { scroll: false });
+  };
   return (
-    <div className="min-w-1/3 max-w-3xl mb-3">
+    <div
+      onClick={handleClick}
+      className="cursor-pointer min-w-1/3 max-w-3xl mb-3"
+    >
       <div className="flex gap-4 border rounded-lg bg-white p-4 shadow-sm hover:shadow-md transition dark:bg-[#1d293d]">
         {/*  <div className="w-16 h-16 flex items-center justify-center rounded-full bg-primary-color text-white text-4xl font-bold flex-shrink-0">
           {item.employerName[0] || "?"}
