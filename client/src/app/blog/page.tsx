@@ -15,6 +15,12 @@ function page() {
         <div className="max-w-[1400px] flex justify-center mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24">
           <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             <BlogCard
+              imageSrc="https://images.unsplash.com/photo-1650526087824-163941841b52?w=900&q=80"
+              title="En Kolay İş Bulunan Ülkeler 2026 (Türkler İçin)"
+              description="Türk vatandaşları için 2026'da en kolay iş bulunan ülkeler: vize süresi, ortalama maaş, dil şartı ve gerçek fırsatlarla sıralı liste. Hangisi size göre?"
+              link="/blog/en-kolay-is-bulunan-ulkeler"
+            />
+            <BlogCard
               imageSrc="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80"
               title="İngilizce Bilmeden Yurtdışında İş Bulmak Mümkün mü?"
               description="İngilizce bilmeden yurtdışı iş bulmak mümkün mü? 2026'da hangi ülkeler, sektörler ve yollar dil şartını esnetiyor? Gerçek rakamlar ve adım adım rehber."
@@ -24,7 +30,7 @@ function page() {
               imageSrc="https://images.unsplash.com/photo-1758551737979-561178bb5588?w=1600&q=85"
               title="Avrupa Maaşları 2026: Ülke Ülke Güncel Liste"
               description="Avrupa maaşları 2026 güncel verilerle: Almanya'dan İsviçre'ye net ve brüt maaş karşılaştırması, yaşam maliyeti analizi ve hangi ülkede ne kadar kazanırsınız?"
-              link="/blog/ingilizce-bilmeden-yurtdisi-is"
+              link="/blog/avrupa-maaslari-2026"
             />
             <BlogCard
               imageSrc="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=85"
